@@ -1,7 +1,6 @@
 let {
   WAConnection
 } = require('@adiwajshing/baileys')
-let axios = require('axios')
 
 async function connectToWhatsApp () {
   const mut = new WAConnection()
