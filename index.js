@@ -6,8 +6,8 @@ let fs = require('fs')
 //Function
 async function startBot () {
   const mut = new WAConnection()
-  client.logger.level = 'warn'
-  client.on('qr', () => {
+  mut.logger.level = 'warn'
+  mut.on('qr', () => {
     console.log('[!] Scan the QR code!')
   })
   //Added-Session
