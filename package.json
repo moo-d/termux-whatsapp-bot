@@ -1,0 +1,54 @@
+{
+  "name": "baileys-wabot",
+  "version": "0.0.1",
+  "description": "WhatsApp Bot With Baileys",
+  "depecrated": false,
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "src": "src"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "termux-whatsapp-bot",
+    "whatsapp-bot",
+    "whatsapp",
+    "js-whatsapp",
+    "baileys-wabot",
+    "wabot"
+  ],
+  "homepage": "https://github.com/moo-d/baileys-wabot",
+  "author": {
+    "name": "moo-d"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moo-d/baileys-wabot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moo-d/baileys-wabot/issues"
+  },
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
+    "cfonts": "^2.9.3",
+    "chalk": "^4.1.1",
+    "cheerio": "^1.0.0-rc.5",
+    "express": "^4.17.1",
+    "file-type": "^16.5.2",
+    "got": "^11.8.2",
+    "human-readable": "^0.2.1",
+    "jsbarcode": "^3.11.4",
+    "jsdom": "^16.6.0",
+    "lodash": "^4.17.21",
+    "lowdb": "^2.1.0",
+    "node-fetch": "^2.6.1",
+    "node-gtts": "^2.0.2",
+    "node-webpmux": "^3.1.0",
+    "qrcode": "^1.4.4",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
