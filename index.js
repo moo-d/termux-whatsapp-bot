@@ -2,12 +2,14 @@ let {
   WAConnection
 } = require('@adiwajshing/baileys')
 
+//Function
 async function startBot () {
   const mut = new WAConnection()
   client.logger.level = 'warn'
   client.on('qr', () => {
     console.log('[!] Scan the QR code!')
   })
+  //Added-Session
   fs.existsSync('./session.json') && mut.loadAuthInfo('./session.json')
   mut.on('connecting', () => {
     start('2', 'Connecting...')
@@ -35,3 +37,7 @@ async function startBot () {
     } else console.log (chatUpdate)
   })
 }
+
+//Run-Bot
+startBot ()
+.catch (err => console.log("unexpected error: " + err) ) // catch any errors
