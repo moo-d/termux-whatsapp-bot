@@ -1,6 +1,7 @@
 let {
   WAConnection
 } = require('@adiwajshing/baileys')
+let fs = require('fs')
 
 //Function
 async function startBot () {
