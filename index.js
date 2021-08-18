@@ -2,8 +2,22 @@ let {
   WAConnection
 } = require('@adiwajshing/baileys')
 
-async function connectToWhatsApp () {
+async function startBot () {
   const mut = new WAConnection()
+  client.logger.level = 'warn'
+  client.on('qr', () => {
+    console.log('[!] Scan the QR code!')
+  })
+  fs.existsSync('./session.json') && mut.loadAuthInfo('./session.json')
+  mut.on('connecting', () => {
+    start('2', 'Connecting...')
+  })
+  mut.on('open', () => {
+    success('2', 'Connected')
+  })
+  await mut.connect({timeoutMs: 30*1000})
+  fs.writeFileSync('./session.json', JSON.stringify(mut.base64EncodedAuthInfo(), null, '\t'))
+
   mut.on('chats-received', async ({ hasNewChats }) => {
     console.log(`You have ${mut.chats.length} chats, Chats available: ${hasNewChats}`)
 
@@ -12,5 +26,12 @@ async function connectToWhatsApp () {
   })
   mut.on('contacts-received', () => {
     console.log('you have ' + Object.keys(mut.contacts).length + ' contacts')
+  })
+  await mut.connect ()
+  mut.on('chat-update', chatUpdate => {
+    if (chatUpdate.messages && chatUpdate.count) {
+      const message = chatUpdate.messages.all()[0]
+      console.log (message)
+    } else console.log (chatUpdate)
   })
 }
