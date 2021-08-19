@@ -22,14 +22,4 @@ async function startBot () {
     MUT.close()
   })
   MUT.connect()
-  MUT.on('chat-update', chatUpdate => {
-    if (chatUpdate.messages && chatUpdate.count) {
-        const message = chatUpdate.messages.all()[0]
-        console.log(message)
-    } else console.log(chatUpdate)
-  })
 }
-
-//Run-Bot
-startBot ()
-.catch (err => console.log("unexpected error: " + err) ) // catch any errors
