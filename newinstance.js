@@ -2,6 +2,7 @@ let {
   WAConnection
 } = require('@adiwajshing/baileys')
 let fs = require('fs')
+let fetch = require('node-fetch')
 
 //Function
 async function startBot () {
