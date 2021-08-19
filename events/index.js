@@ -1,3 +1,0 @@
-const mkEvents = ({ number, sharedstate }) => ({
-  
-})
