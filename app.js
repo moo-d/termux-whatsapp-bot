@@ -7,3 +7,6 @@ async function startBot () {
   const MUT = new WAConnection()
   return newinstance()
 }
+
+startBot()
+.catch (err => console.log("[!] error: " + err) ) // catch any errors
