@@ -23,3 +23,5 @@ async function startBot () {
   })
   MUT.connect()
 }
+
+module.exports = newinstance
