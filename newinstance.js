@@ -4,13 +4,12 @@ let {
 let fs = require('fs')
 let fetch = require('node-fetch')
 
-const newinstance = async ({ webhook }) => {
-async function startBot () {
+const newinstance = async () => {
   const MUT = new WAConnection()
   let attempts = 0
   MUT.on('qr', qr => {
     attempts += 1
-    fetch(webhook, {
+    fetch({
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
