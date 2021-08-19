@@ -1,1 +1,1 @@
-const { WAConnection } = require('@adiwajshing/baileys')
+const { WAConnection: _WAConnection } = require('@adiwajshing/baileys')
