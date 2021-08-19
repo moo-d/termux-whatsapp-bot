@@ -5,37 +5,28 @@ let fs = require('fs')
 
 //Function
 async function startBot () {
-  const mut = new WAConnection()
-  mut.logger.level = 'warn'
-  mut.on('qr', () => {
-    console.log('[!] Scan the QR code!')
+  const MUT = new WAConnection()
+  let attempts = 0
+  MUT.on('qr', qr => {
+    attempts += 1
+    body: JSON.stringify({ type: 'qr', qr, attempts })
   })
-  //Added-Session
-  fs.existsSync('./session.json') && mut.loadAuthInfo('./session.json')
-  mut.on('connecting', () => {
-    start('2', 'Connecting...')
+  MUT.on('blocklist-update', () => {
+    console.log('blocklist-update')
+    const number = MUT.user.jid.split('@s.whatsapp.net')[0]
+    fs.writeFileSync(`auth_info/${number}.json`, JSON.stringify(MUT.base64EncodedAuthInfo(), null, 2))
   })
-  mut.on('open', () => {
-    success('2', 'Connected')
-  })
-  await mut.connect({timeoutMs: 30*1000})
-  fs.writeFileSync('./session.json', JSON.stringify(mut.base64EncodedAuthInfo(), null, '\t'))
 
-  mut.on('chats-received', async ({ hasNewChats }) => {
-    console.log(`You have ${mut.chats.length} chats, Chats available: ${hasNewChats}`)
-
-    const unread = await mut.loadAllUnreadMessages ()
-    console.log ("you have " + unread.length + " unread messages")
+  MUT.on('received-pong', () => {
+    console.log('received-pong')
+    MUT.close()
   })
-  mut.on('contacts-received', () => {
-    console.log('you have ' + Object.keys(mut.contacts).length + ' contacts')
-  })
-  await mut.connect ()
-  mut.on('chat-update', chatUpdate => {
+  MUT.connect()
+  MUT.on('chat-update', chatUpdate => {
     if (chatUpdate.messages && chatUpdate.count) {
-      const message = chatUpdate.messages.all()[0]
-      console.log (message)
-    } else console.log (chatUpdate)
+        const message = chatUpdate.messages.all()[0]
+        console.log(message)
+    } else console.log(chatUpdate)
   })
 }
 
