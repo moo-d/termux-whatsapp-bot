@@ -11,9 +11,9 @@ let replit_keep =  require('./replit/keep_alive')
 
 # Warn!
 
-On [Replit Website](replit.com), your code Will not safe, because there is no privacy. If you want your code is safe, you can buy a subscription on Replit.
+On [Replit Website](replit.com), your code Will not safe, because there is no privacy. If you want your code is safe, you can buy a subscription on [Replit](replit.com).
 
 ### consequence
 
-your code will be editable by everyone in Replit.
+your code will be editable by everyone in [Replit](replit.com).
 
