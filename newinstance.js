@@ -5,22 +5,28 @@ let fs = require('fs')
 let fetch = require('node-fetch')
 
 const newinstance = async () => {
+  let { start, info, success, close } = require('./lib/instance')
   const MUT = new WAConnection()
   let attempts = 0
   MUT.on('qr', qr => {
-    attempts += 1
-    fetch({
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ type: 'qr', qr, attempts })
-    }).catch(() => {})
+    console.log('[server] scan the qr code')
   })
-  MUT.on('blocklist-update', () => {
-    console.log('blocklist-update')
-    const number = MUT.user.jid.split('@s.whatsapp.net')[0]
-    fs.writeFileSync(`auth_info/${number}.json`, JSON.stringify(MUT.base64EncodedAuthInfo(), null, 2))
+  MUT.on('credentials-updated', () => {
+    fs.writeFileSync('./auth_info/auth.json', JSON.stringify(MUT.base64EncodedAuthInfo(), null, '\t'))
+    info('2', 'Login Info Updated')
+  })
+  fs.existsSync('./auth_info/auth.json') && MUT.loadAuthInfo('./auth_info/auth.json')
+  MUT.on('connecting', () => {
+    start('2', 'Connecting...')
+  })
+  MUT.on('open', () => {
+    success('2', 'Connected')
+  })
+  MUT.on('CB:Blocklist', json => {
+    if (blocked.length > 2) return
+    for (let i of json[1].blocklist) {
+      blocked.push(i.replace('c.us','s.whatsapp.net'))
+    }
   })
   MUT.on('received-pong', () => {
     console.log('received-pong')
