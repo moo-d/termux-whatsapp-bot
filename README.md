@@ -1,3 +1,5 @@
-# baileys-wabot
+# Baileys Wabot
 
-<h1>COMING SOON</h1>
+<p align="center">
+  <img src="./.github/20210821_110622.jpg
+</p>
