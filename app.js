@@ -1,5 +1,5 @@
 const { WAConnection } = require('@adiwajshing/baileys')
-const fs = require('express')
+const fs = require('fs')
 const newinstance = require('./newinstance')
 const message = require('./lib/msg/message')
 
