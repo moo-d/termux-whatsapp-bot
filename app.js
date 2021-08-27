@@ -28,9 +28,9 @@ async function startBot () {
   MUT.on('group-participants-update', async (anu) => {
     //if (!welkom.includes(anu.jid)) return
     try {
-      let gcind = require('./../msg/lang/ind')
-      let gceng = require('./../msg/lang/eng')
-      let gcset = JSON.parse(fs.readFileSync('./../setting.json'))
+      let gcind = require('./lib/lang/ind')
+      let gceng = require('./lib/lang/eng')
+      let gcset = JSON.parse(fs.readFileSync('./lib/setting.json'))
       let gclang = 'gc' + gcset.language
       const mdata = await MUT.groupMetadata(anu.jid)
       console.log(anu)
@@ -65,8 +65,9 @@ async function startBot () {
       blocked.push(i.replace('c.us','s.whatsapp.net'))
     }
   })
-  await  MUT.connect()
+  await  MUT.connect(MUT)
   //Calling files
+  return message()
 }
 
 startBot()
