@@ -40,10 +40,10 @@ async function starts() {
     console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
   })
   MUT.on('credentials-updated', () => {
-    fs.writeFileSync('./BarBar.json', JSON.stringify(MUT.base64EncodedAuthInfo(), null, '\t'))
+    fs.writeFileSync('./auth_info/auth.json', JSON.stringify(MUT.base64EncodedAuthInfo(), null, '\t'))
     info('2', 'Login Info Updated')
   })
-  fs.existsSync('./BarBar.json') && MUT.loadAuthInfo('./BarBar.json')
+  fs.existsSync('./auth_info/auth.json') && MUT.loadAuthInfo('./auth_info/auth.json')
   MUT.on('connecting', () => {
     start('2', 'Connecting...')
   })
