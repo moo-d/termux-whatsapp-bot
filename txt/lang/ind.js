@@ -1,3 +1,13 @@
+exports.help = (prefix) => {
+  return `
+[Main]
+=> ${prefix}help
+=> ${prefix}menu
+
+[Fun]
+=> ${prefix}meme
+`
+}
 exports.wait = () => {
   return `Mohon tunggu sebentar...`
 }
