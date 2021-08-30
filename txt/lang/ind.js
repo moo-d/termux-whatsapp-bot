@@ -29,3 +29,6 @@ exports.welcome = () => {
 exports.goodbye = () => {
   return `Selamat tinggal`
 }
+exports.done = () => {
+  return `Selesai`
+}
