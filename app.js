@@ -32,7 +32,7 @@ function kyun(seconds){
   var minutes = Math.floor(seconds % (60*60) / 60);
   var seconds = Math.floor(seconds % 60);
 
-  return `${pad(hours)} ` + txtlang.hours() + `${pad(minutes)} ` + txtlang.minute() + `${pad(seconds)} ` + txtlang.second()
+  return `${pad(hours)} ` + txtlang.hours() + ` ${pad(minutes)} ` + txtlang.minute() + ` ${pad(seconds)} ` + txtlang.second()
 }
 
 async function starts() {
