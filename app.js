@@ -16,6 +16,7 @@ const { removeBackgroundFromImageFile } = require('remove.bg')
 const imgbb = require('imgbb-uploader')
 const setting = JSON.parse(fs.readFileSync('./lib/setting.json'))
 const apilink = JSON.parse(fs.readFileSync('./lib/apilink.json'))
+const { eng, ind } = require(fs.readFileSync('./txt/lang/'))
 const txtlang = setting.lang
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
