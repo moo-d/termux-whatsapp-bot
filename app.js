@@ -146,6 +146,10 @@ async function starts() {
 	case 'menu':
 	  MUT.sendMessage(from, txtlang.help(prefix), text)
 	break
+        case 'meme':
+          memeimg = await getBuffer(apilink.mycodeit + 'darkjokes')
+          MUT.sendMessage(from, memeimg, image, { quoted: mek, caption: txtlang.this() })
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
