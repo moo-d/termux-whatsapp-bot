@@ -16,3 +16,6 @@ exports.hello = () => {
 exports.welcome = () => {
   return `Selamat datang di`
 }
+exports.goodbye = () => {
+  return `Selamat tinggal`
+}
