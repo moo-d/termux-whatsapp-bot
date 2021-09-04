@@ -42,10 +42,6 @@ async function starts() {
   MUT.on('qr', () => {
     console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
   })
-  MUT.on('credentials-updated', () => {
-    fs.writeFileSync('./auth_info/auth.json', JSON.stringify(MUT.base64EncodedAuthInfo(), null, '\t'))
-    info('2', 'Login Info Updated')
-  })
   fs.existsSync('./auth_info/auth.json') && MUT.loadAuthInfo('./auth_info/auth.json')
   MUT.on('connecting', () => {
     start('2', 'Connecting...')
@@ -54,6 +50,7 @@ async function starts() {
     success('2', 'Connected')
   })
   await MUT.connect({timeoutMs: 30*1000})
+  fs.writeFileSync('./auth_info/auth.json', JSON.stringify(MUT.base64EncodedAuthInfo(), null, '\t'))
   MUT.on('group-participants-update', async (anu) => {
     if (!welcomejson.includes(anu.jid)) return
     try {
