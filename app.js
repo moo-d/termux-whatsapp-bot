@@ -87,7 +87,7 @@ async function starts() {
       blocked.push(i.replace('c.us','s.whatsapp.net'))
     }
   })
-  MUT.on('message-new', async (mek) => {
+  MUT.on('chat-update', async (mek) => {
     try {
       if (!mek.message) return
       if (mek.key && mek.key.remoteJid == 'status@broadcast') return
