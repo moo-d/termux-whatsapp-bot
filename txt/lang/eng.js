@@ -47,6 +47,12 @@ exports.acc = () => {
 exports.addedadmin = () => {
   return `add to be admin group.`
 }
+exports.demotedadmin = () => {
+  return `Get down from the admin group.`
+}
+exports.ongroup = () => {
+  return `on group`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
