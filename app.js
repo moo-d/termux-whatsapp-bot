@@ -4,11 +4,13 @@ const {
   Presence,
   Mimetype
 } = require('@adiwajshing/baileys')
+const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel } = require('./lib/function/leveling')
 const { color, bgcolor } = require('./lib/color')
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom } = require('./lib/msgf')
 const { start, info, success, close } require('./lib/instance')
 const { fetchJson } = require('./lib/fetcher')
 const fs = require('fs')
+const speed = require('performance-now')
 const moment = require('moment-timezone')
 const { exec } = require('child_process')
 const fetch = require('node-fetch')
@@ -22,6 +24,10 @@ const txtlang = ind
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
+const user = JSON.parse(fs.readFileSync('./src/user.json'))
+const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
+const _level = JSON.parse(fs.readFileSync('./src/level.json'))
+
 prefix = setting.prefix
 blocked = []
 
