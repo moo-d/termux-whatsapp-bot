@@ -216,6 +216,20 @@ async function starts() {
 	    MUT.groupDemoteAdmin(from, mentioned)
 	  }
 	break
+        case 'wa.me':
+	case 'wame':
+          try {
+	    ppimg = await MUT.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
+	  } catch {
+	    ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+  	  }
+          ppimgbuf = await getBuffer(ppimg)
+          options = {
+            text: txtlang.wame(sender)
+            contextInfo: { mentionedJid: [sender] }
+          }
+          MUT.sendMessage(from, ppimgbuf, image, { options, quoted: mek } )
+	break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
