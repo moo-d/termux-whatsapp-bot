@@ -225,7 +225,7 @@ async function starts() {
   	  }
           ppimgbuf = await getBuffer(ppimg)
           options = {
-            text: txtlang.wame(sender)
+            text: `{txtlang.wame(sender)}`
             contextInfo: { mentionedJid: [sender] }
           }
           MUT.sendMessage(from, ppimgbuf, image, { options, quoted: mek } )
