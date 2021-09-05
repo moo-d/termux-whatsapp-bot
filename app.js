@@ -137,6 +137,23 @@ async function starts() {
       const mentions = (teks, memberr, id) => {
 	(id == null || id == undefined || id == false) ? MUT.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : MUT.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
       }
+      if (isGroup && isLevelingOn) {
+        const currentLevel = getLevelingLevel(sender)
+        const checkId = getLevelingId(sender)
+        try {
+          if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
+          const amountXp = Math.floor(Math.random() * 10) + 500
+          const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
+          const getLevel = getLevelingLevel(sender)
+          addLevelingXp(sender, amountXp)
+          if (requiredXp <= getLevelingXp(sender)) {
+            addLevelingLevel(sender, 1)
+            await reply(txtlang.levelup(sender, getLevelingXp, getLevel, getLevelingLevel)
+          }
+        } catch (err) {
+          console.error(err)
+        }
+      }
       colors = ['red','white','black','blue','yellow','green']
       const isMedia = (type === 'imageMessage' || type === 'videoMessage')
       const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
@@ -180,6 +197,7 @@ async function starts() {
 	    MUT.groupMakeAdmin(from, mentioned)
 	  }
 	break
+        
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
