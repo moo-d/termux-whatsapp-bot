@@ -36,10 +36,10 @@ exports.onlygroup = () => {
   return `[ ! ] Perintah ini hanya bisa di gunakan di dalam group.`
 }
 exports.onlyadmin = () => {
-  return `[ ! ] Perintah ini hanya bisa di gunakan oleh admin.`
+  return `[ ! ] Perintah ini hanya bisa di gunakan oleh admin group.`
 }
 exports.onlybadmin = () => {
-  return `[ ! ] Perintah ini hanya bisa di gunakan saat bot menjadi admin.`
+  return `[ ! ] Perintah ini hanya bisa di gunakan saat bot menjadi admin group.`
 }
 exports.acc = () => {
   return `Perintah diterima.`
