@@ -47,6 +47,12 @@ exports.acc = () => {
 exports.addedadmin = () => {
   return `Menambahkan menjadi admin group.`
 }
+exports.demotedadmin = () => {
+  return `Menurunkan jabatan dari admin group.`
+}
+exports.ongroup = () => {
+  return `di group`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
