@@ -47,3 +47,11 @@ exports.acc = () => {
 exports.addedadmin = () => {
   return `Menambahkan menjadi admin group.`
 }
+exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
+  return `
+*[ LEVEL UP ]*
+• *Name*: ${sender}
+• *XP*: ${getLevelingXp(sender)}
+• *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
+Congrats!! 🎉🎉`
+}
