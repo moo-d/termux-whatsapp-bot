@@ -32,3 +32,18 @@ exports.goodbye = () => {
 exports.done = () => {
   return `Selesai`
 }
+exports.onlygroup = () => {
+  return `[ ! ] Perintah ini hanya bisa di gunakan di dalam group.`
+}
+exports.onlyadmin = () => {
+  return `[ ! ] Perintah ini hanya bisa di gunakan oleh admin.`
+}
+exports.onlybadmin = () => {
+  return `[ ! ] Perintah ini hanya bisa di gunakan saat bot menjadi admin.`
+}
+exports.acc = () => {
+  return `Perintah diterima.`
+}
+exports.addedadmin = () => {
+  return `Menambahkan menjadi admin group.`
+}
