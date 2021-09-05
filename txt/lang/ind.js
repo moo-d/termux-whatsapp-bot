@@ -53,5 +53,5 @@ exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
 • *Name*: ${sender}
 • *XP*: ${getLevelingXp(sender)}
 • *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
-Congrats!! 🎉🎉`
+Selamat!! 🎉🎉`
 }
