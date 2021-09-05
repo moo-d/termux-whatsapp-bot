@@ -198,21 +198,21 @@ async function starts() {
 	  }
 	break
         case 'demote':
-          if (!isGroup) return reply(txtlang.onlygroup)
-	  if (!isGroupAdmins) return reply(txtlangonlyadmin)
-          if (!isBotGroupAdmins) return reply(txtlang.onlybdmin)
+          if (!isGroup) return reply(txtlang.onlygroup())
+	  if (!isGroupAdmins) return reply(txtlangonlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybdmin())
 	  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('𝐓𝐚𝐠 𝐭𝐚𝐫𝐠𝐞𝐭 𝐲𝐚𝐧𝐠 𝐦𝐚𝐮 𝐝𝐢 𝐭𝐮𝐫𝐮𝐧𝐤𝐚𝐧 𝐚𝐝𝐦𝐢𝐧')
 	  mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
 	  if (mentioned.length > 1) {
 	    teks = ''
 	    for (let _ of mentioned) {
-	      teks += `${txtlang.acc()}, ${txtlang.demotedadmin} :\n`
+	      teks += `${txtlang.acc()}, ${txtlang.demotedadmin()} :\n`
 	      teks += `@_.split('@')[0]`
 	    }
 	    mentions(teks, mentioned, true)
 	    MUT.groupDemoteAdmin(from, mentioned)
 	  } else {
-	    mentions(`${txtlang.acc()}, ${txtlang.demotedadmin()} @${mentioned[0].split('@')[0]}\n ${txtlang.ongroup} _*${groupMetadata.subject}*_`, mentioned, true)
+	    mentions(`${txtlang.acc()}, ${txtlang.demotedadmin()} @${mentioned[0].split('@')[0]}\n ${txtlang.ongroup()} _*${groupMetadata.subject}*_`, mentioned, true)
 	    MUT.groupDemoteAdmin(from, mentioned)
 	  }
 	break
