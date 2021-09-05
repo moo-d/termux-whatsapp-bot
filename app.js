@@ -18,7 +18,7 @@ const imgbb = require('imgbb-uploader')
 const setting = JSON.parse(fs.readFileSync('./lib/setting.json'))
 const apilink = JSON.parse(fs.readFileSync('./lib/apilink.json'))
 const { eng, ind } = require('./txt/lang/')
-const txtlang = setting.lang
+const txtlang = ind
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -146,8 +146,15 @@ async function starts() {
 	  MUT.sendMessage(from, txtlang.help(prefix), text)
 	break
         case 'meme':
-          memeimg = await getBuffer(apilink.mycodeit + 'darkjokes')
-          MUT.sendMessage(from, memeimg, image, { quoted: mek, caption: txtlang.this() })
+          reply(txtlang.wait())
+          try {
+            memeilink = await fetchJson(`${mycodeit}darkjokes`, { method: 'get'})
+            memeimg = await getBuffer(memeilink.result)
+            MUT.sendMessage(from, memeimg, image, { quoted:mek, caption:txtlang.done()})
+          } catch(e) {
+            reply('[ ! ] Error')
+            console.log('Error : ' + e)
+          }
         break
 	default:
         if (isGroup && isSimi && budy != undefined) {
