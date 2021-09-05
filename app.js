@@ -24,7 +24,7 @@ const txtlang = ind
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
-const user = JSON.parse(fs.readFileSync('./src/user.json'))
+//const user = JSON.parse(fs.readFileSync('./src/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
 
@@ -162,6 +162,24 @@ async function starts() {
             console.log('Error : ' + e)
           }
         break
+        case 'promote': 
+          if (!isGroup) return reply(txtlang.onlygroup())
+	  if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+	  if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+	  if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply(txtlang.tagcmd())
+	  mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+	  if (mentioned.length > 1) {
+	    txtacc = txtlang.acc()
+	    for (let _ of mentioned) {
+	      teks += `@${_.split('@')[0]}\n`
+	    }
+	    mentions(teks, mentioned, true)
+	    MUT.groupMakeAdmin(from, mentioned)
+	  } else {
+	    mentions(`${txtlang.acc()}, ${txtlang.addedadmin()} : @${mentioned[0].split('@')[0]}`, mentioned, true)
+	    MUT.groupMakeAdmin(from, mentioned)
+	  }
+	break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
