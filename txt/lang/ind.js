@@ -56,8 +56,8 @@ exports.demotedadmin = () => {
 exports.ongroup = () => {
   return `di group`
 }
-exports.prefixchanged = (body) => {
-  return `[ ! ] Prefix telah diganti menjadi : ${body.slice(10)}`
+exports.prefixchanged = (prefix) => {
+  return `[ ! ] Prefix telah diganti menjadi : ${prefix}`
 }
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
