@@ -7,7 +7,7 @@ const {
 const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel } = require('./lib/function/leveling')
 const { color, bgcolor } = require('./lib/color')
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom } = require('./lib/msgf')
-const { start, info, success, close } require('./lib/instance')
+const { start, info, success, close } = require('./lib/instance')
 const { fetchJson } = require('./lib/fetcher')
 const fs = require('fs')
 const speed = require('performance-now')
@@ -148,7 +148,7 @@ async function starts() {
           addLevelingXp(sender, amountXp)
           if (requiredXp <= getLevelingXp(sender)) {
             addLevelingLevel(sender, 1)
-            await reply(txtlang.levelup(sender, getLevelingXp, getLevel, getLevelingLevel)
+            await reply(txtlang.levelup(sender, getLevelingXp, getLevel, getLevelingLevel))
           }
         } catch (err) {
           console.error(err)
