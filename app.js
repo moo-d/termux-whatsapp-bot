@@ -256,6 +256,49 @@ async function starts() {
           reply(txtlang.prefixchanged() + ` : ${prefix}`)
           console.log(color('[INFO]', 'green'), color(`${txtlang.prefixchanged()} : ${prefix}`, 'yellow'));
         break
+        case 'setppbot':
+          if (!isQuotedImage) return reply(`${txtlang.needimgcpt()} ${txtlang.or()} ${txtlang.needtagimgcpt()}`)
+          if (!isOwner) return reply(txtlang.onlyowner())
+          enmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+          media = await MUT.downloadAndSaveMediaMessage(enmedia)
+          await MUT.updateProfilePicture(botNumber, media)
+          reply(txtlang.done())
+        break
+        case 'bc':
+          if (!isOwner) return reply(txtlang.onlyowner())
+          if (args.length < 1) return reply('.......')
+          anu = await MUT.chats.all()
+          if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+            const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+            buff = await MUT.downloadMediaMessage(encmedia)
+            for (let _ of anu) {
+              MUT.sendMessage(_.jid, buff, image, {caption: `*[ BROADCAST ]*\n\n${body.slice(4)}`})
+            }
+            reply('')
+          } else {
+            for (let _ of anu) {
+              sendMess(_.jid, `*[ BROADCAST ]*\n\n${body.slice(4)}`)
+            }
+            reply('Broadcast' + txtlang.done())
+          }
+        break
+        case 'bcgc':
+          if (!isOwner) return reply(txtlang.onlyowner())                              
+          if (args.length < 1) return reply('.......')
+          if (isMedia && !mek.message.videoMessage || isQuotedImage) {
+            const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
+            buff = await MUT.downloadMediaMessage(encmedia)
+            for (let _ of groupMembers) {
+              MUT.sendMessage(_.jid, buff, image, {caption: `*[ BC GROUP ]*\n*Group* : ${groupName}\n\n${body.slice(6)}`})
+            }
+            reply('')
+          } else {
+            for (let _ of groupMembers) {
+              sendMess(_.jid, `*[ BC GROUP ]*\n*Group* : ${groupName}\n\n${body.slice(6)}`)
+            }
+            reply('Broadcast Group' + txtlang.done())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
