@@ -57,6 +57,9 @@ exports.demotedadmin = () => {
 exports.ongroup = () => {
   return `on group`
 }
+exports.prefixchanged = () => {
+  return ` Prefix has been changed  to`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
