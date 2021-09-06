@@ -2,7 +2,8 @@ const {
   WAConnection,
   MessageType,
   Presence,
-  Mimetype
+  Mimetype,
+  GroupSettingChange
 } = require('@adiwajshing/baileys')
 const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel } = require('./lib/function/leveling')
 const { color, bgcolor } = require('./lib/color')
@@ -27,6 +28,7 @@ const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
 //const user = JSON.parse(fs.readFileSync('./src/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
+const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
 
 prefix = setting.prefix
 blocked = []
@@ -299,6 +301,7 @@ async function startsBaileysBot() {
             reply('Broadcast Group' + txtlang.done())
           }
         break
+        
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
