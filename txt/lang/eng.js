@@ -66,6 +66,9 @@ exports.needimgcpt = () => {
 exports.needtagimgcpt = () => {
   return `Image tags that have been sent`
 }
+exports.or = () => {
+  return `Or`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
