@@ -17,19 +17,19 @@ exports.minute = () => {
   return `دقيقة`
 }
 exports.second = () => {
-  return `Second`
+  return `ثانيا`
 }
 exports.hello = () => {
-  return `Hello`
+  return `أهلا`
 }
 exports.welcome = () => {
-  return `Welcome to`
+  return `مرحبا بك في`
 }
 exports.goodbye = () => {
-  return `GoodBye`
+  return `مع السلامة`
 }
 exports.done = () => {
-  return `Done`
+  return `منتهي`
 }
 exports.onlygroup = () => {
   return `[ ! ] This command can only be used in groups.`
