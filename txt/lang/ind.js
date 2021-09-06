@@ -62,6 +62,12 @@ exports.prefixchanged = () => {
 exports.needimgcpt = () => {
   return `Kirim gambar dengan caption`
 }
+exports.needtagimgcpt = () => {
+  return `Tag gambar yang telah dikirim`
+}
+exports.or = () => {
+  return `Atau`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
