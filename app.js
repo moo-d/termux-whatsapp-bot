@@ -229,6 +229,31 @@ async function starts() {
           teks = `${txtlang.wame(sender)}`
           MUT.sendMessage(from, ppimgbuf, image, { quoted:mek, caption: teks, contextInfo: { mentionedJid: [sender] } } )
 	break
+        case 'blocklist':
+          teks = 'This is list of blocked number :\n'
+          for (let block of blocked) {
+            teks += `~> @${block.split('@')[0]}\n`
+          }
+          teks += `Total : ${blocked.length}`
+          MUT.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
+        break
+        case 'listadmins':
+        case 'adminlist':
+          if (!isGroup) return reply(mess.only.group)
+          teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
+          no = 0
+          for (let admon of groupAdmins) {
+            no += 1                                                                                                                                      teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
+          }
+          mentions(teks, groupAdmins, true)
+        break
+        case 'setprefix':
+          if (args.length < 1) return
+          if (!isOwner) return reply(txtlang.onlyowner())
+          prefix = args[0]
+          reply(txtlang.prefixchanged() + ` : ${prefix}`)
+          console.log(color('[INFO]', 'green'), color(`${txtlang.prefixchanged()} : ${prefix}`, 'yellow'));
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
