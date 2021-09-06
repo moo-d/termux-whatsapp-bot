@@ -59,6 +59,9 @@ exports.ongroup = () => {
 exports.prefixchanged = () => {
   return ` Prefix telah diganti menjadi`
 }
+exports.needimgcpt = () => {
+  return `Kirim gambar dengan caption`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
