@@ -11,10 +11,10 @@ exports.wait = () => {
   return `انتظر...`
 }
 exports.hours = () => {
-  return `Hours`
+  return `ساعات`
 }
 exports.minute = () => {
-  return `Minute`
+  return `دقيقة`
 }
 exports.second = () => {
   return `Second`
