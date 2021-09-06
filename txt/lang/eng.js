@@ -41,6 +41,10 @@ exports.onlyadmin = () => {
 exports.onlybadmin = () => {
   return `[ ! ] This command can only be used when the bot is an admin group.`
 }
+exports.onlyowner = () => {
+  return `[ ! ] This command can only be used by owner.`
+
+}
 exports.acc = () => {
   return `Order accepted.`
 }
