@@ -63,6 +63,9 @@ exports.prefixchanged = () => {
 exports.needimgcpt = () => {
   return `Send a picture with a caption`
 }
+exports.needtagimgcpt = () => {
+  return `Image tags that have been sent`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
