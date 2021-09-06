@@ -238,9 +238,11 @@ async function starts() {
           MUT.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
         break
         case 'listadmins':
+        case 'listadmin':
+        case 'adminslist':
         case 'adminlist':
           if (!isGroup) return reply(mess.only.group)
-          teks = `List admin of group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
+          teks = `List admin group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
           no = 0
           for (let admon of groupAdmins) {
             no += 1                                                                                                                                      teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
