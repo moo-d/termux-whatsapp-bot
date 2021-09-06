@@ -3,12 +3,12 @@ exports.help = (prefix) => {
 [الأساسية]
 => ${prefix}help
 => ${prefix}menu
-[Fun]
+[مرح]
 => ${prefix}meme
 `
 }
 exports.wait = () => {
-  return `Wait...`
+  return `انتظر...`
 }
 exports.hours = () => {
   return `Hours`
