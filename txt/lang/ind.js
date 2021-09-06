@@ -41,6 +41,9 @@ exports.onlyadmin = () => {
 exports.onlybadmin = () => {
   return `[ ! ] Perintah ini hanya bisa di gunakan saat bot menjadi admin group.`
 }
+exports.onlyowner = () => {
+  return `[ ! ] Perintah ini hanya bisa di gunakan oleh owner.`
+}
 exports.acc = () => {
   return `Perintah diterima.`
 }
