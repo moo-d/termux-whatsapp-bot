@@ -56,28 +56,28 @@ exports.ongroup = () => {
   return `في المجموعة`
 }
 exports.prefixchanged = () => {
-  return ` Prefix has been changed  to`
+  return ` تم تغيير البادئة إلى`
 }
 exports.needimgcpt = () => {
-  return `Send a picture with a caption`
+  return `أرسل صورة مع شرح`
 }
 exports.needtagimgcpt = () => {
-  return `Image tags that have been sent`
+  return `علامات الصور التي تم إرسالها`
 }
 exports.or = () => {
-  return `Or`
+  return `أو`
 }
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
-*[ LEVEL UP ]*
-• *Name*: ${sender}
+*[ يصل المستوى ]*
+• *اسم*: ${sender}
 • *XP*: ${getLevelingXp(sender)}
-• *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
-Congrats!! 🎉🎉`
+• *مستوى*: ${getLevel} ~> ${getLevelingLevel(sender)}
+تهاني!! 🎉🎉`
 }
 exports.wame = (sender) => {
   return `[ *WA-ME* ]
-• _Request by_ : *@${sender.split("@s.whatsapp.net")[0]}*
+• _طلب عن طريق_ : *@${sender.split("@s.whatsapp.net")[0]}*
 • _Your link WhatsApp_ : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*
   *Or ( / )*
   *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
