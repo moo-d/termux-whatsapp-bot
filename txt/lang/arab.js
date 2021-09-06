@@ -78,7 +78,7 @@ exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
 exports.wame = (sender) => {
   return `[ *WA-ME* ]
 • _طلب عن طريق_ : *@${sender.split("@s.whatsapp.net")[0]}*
-• _Your link WhatsApp_ : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*
-  *Or ( / )*
+• _رابط WhatsApp الخاص بك_ : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*
+  *أو ( / )*
   *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
 }
