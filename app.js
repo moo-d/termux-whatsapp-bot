@@ -95,6 +95,8 @@ async function starts() {
   })
   MUT.on('chat-update', async (mek) => {
     try {
+      if (!mek.hasNewMessage) return
+      mek = mek.messages.all()[0]
       if (!mek.message) return
       if (mek.key && mek.key.remoteJid == 'status@broadcast') return
       if (mek.key.fromMe) return
