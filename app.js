@@ -42,7 +42,7 @@ function kyun(seconds){
   return `${pad(hours)} ` + txtlang.hours() + ` ${pad(minutes)} ` + txtlang.minute() + ` ${pad(seconds)} ` + txtlang.second()
 }
 
-async function starts() {
+async function startsBaileysBot() {
   const MUT = new WAConnection()
   MUT.logger.level = 'warn'
   MUT.on('qr', () => {
@@ -314,4 +314,4 @@ async function starts() {
     }
   })
 }
-starts()
+startsBaileysBot()
