@@ -60,6 +60,9 @@ exports.ongroup = () => {
 exports.prefixchanged = () => {
   return ` Prefix has been changed  to`
 }
+exports.needimgcpt = () => {
+  return `Send a picture with a caption`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
