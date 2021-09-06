@@ -32,29 +32,28 @@ exports.done = () => {
   return `منتهي`
 }
 exports.onlygroup = () => {
-  return `[ ! ] This command can only be used in groups.`
+  return `[ ! ] لا يمكن استخدام هذا الأمر إلا في مجموعات.`
 }
 exports.onlyadmin = () => {
-  return `[ ! ] This command can only be used by group admins.`
+  return `[ ! ] لا يمكن استخدام هذا الأمر إلا من قبل مسؤولي المجموعة.`
 }
 exports.onlybadmin = () => {
-  return `[ ! ] This command can only be used when the bot is an admin group.`
+  return `[ ! ] لا يمكن استخدام هذا الأمر إلا عندما يكون الروبوت مجموعة مشرف.`
 }
 exports.onlyowner = () => {
-  return `[ ! ] This command can only be used by owner.`
-
+  return `[ ! ] لا يمكن استخدام هذا الأمر إلا من قبل المالك.`
 }
 exports.acc = () => {
-  return `Order accepted.`
+  return `تم قبول الطلب.`
 }
 exports.addedadmin = () => {
-  return `add to be admin group.`
+  return `أضف لتكون مجموعة الإدارة.`
 }
 exports.demotedadmin = () => {
-  return `Get down from the admin group.`
+  return `النزول من مجموعة الإدارة.`
 }
 exports.ongroup = () => {
-  return `on group`
+  return `في المجموعة`
 }
 exports.prefixchanged = () => {
   return ` Prefix has been changed  to`
