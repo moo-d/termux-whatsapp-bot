@@ -314,6 +314,11 @@ async function startsBaileysBot() {
             console.log('Error :', e)                                                                            reply(txtlang.fail())
           }
         break
+        break
+        case 'kick':
+          if (!isGroup) return reply(txtlang.onlygroup())                                                                                              if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply(txtlang.needtagmember())
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
