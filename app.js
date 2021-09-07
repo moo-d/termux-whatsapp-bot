@@ -30,6 +30,7 @@ const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
 
+pttmode = setting.pttmode
 prefix = setting.prefix
 blocked = []
 
@@ -129,6 +130,7 @@ async function startsBaileysBot() {
       const isNsfw = isGroup ? nsfwjson.includes(from) : false
       const isSimi = isGroup ? simijson.includes(from) : false
       const isOwner = ownerNumber.includes(sender)
+      const isPrivateGc = isGroup ? privategc_.includes(from) : false
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
@@ -334,6 +336,13 @@ async function startsBaileysBot() {
             MUT.groupRemove(from, mentioned)
             MUT.sendMessage(mentioned, txtlang.goodbye(), text)
           }
+        break
+        case 'linkgroup':
+          if (isPrivateGc) return reply(txtlang.privategc())
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          linkgc = await MUT.groupInviteCode(from)
+          reply('https://chat.whatsapp.com/'+linkgc)
         break
 	default:
         if (isGroup && isSimi && budy != undefined) {
