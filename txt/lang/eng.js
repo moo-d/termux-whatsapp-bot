@@ -75,8 +75,17 @@ exports.needtagmember = () => {
 exports.wrongf = () => {
   return 'Sorry, the format you entered is wrong'
 }
-export.kicked = () => {
+exports.kicked = () => {
   return `Ejected`
+}
+exports.succactwelcome = () => {
+  return `[SUCCESSFUL] Enable the welcome feature in this group`
+}
+exports.succnonactwelcome = () => {
+  return `[SUCCESSFUL] Disable the welcome feature in this group`
+}
+exports.enaordisa = () => {
+  return `enable to enable, disable to disable features.`
 }
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
