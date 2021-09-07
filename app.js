@@ -421,6 +421,20 @@ async function startsBaileysBot() {
           MUT.groupSettingChange (from, GroupSettingChange.messageSend, false)
           MUT.sendMessage(from, open, text, {quoted: mek})
         break
+        case 'setpttmode':
+          if (args.length < 1) return reply('.....')                                                                                                   if (!isOwner) return reply(txtlang.onlyowner())
+          if (args[0] == 'true') {
+            pttmode = 'true'
+            reply(txtlang.pttmodechanged() + ` ${pttmode}`)
+            console.log(color('[INFO]', 'green'), color(`${txtlang.pttmodechanged()} : ${pttmode}`, 'yellow'));
+          } else if (args[0] == 'false') {
+            pttmode = 'false'
+            reply(txtlang.pttmodechanged() + ` ${pttmode}`)
+            console.log(color('[INFO]', 'green'), color(`${txtlang.pttmodechanged()} : ${pttmode}`, 'yellow'));
+          } else {
+            reply(txtlang.wrongf())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
