@@ -92,6 +92,12 @@ exports.succnonactprivategc = () => {
 exports.enaordisa = () => {
   return `enable untuk mengaktifkan, disable untuk menonaktifkan fitur.`
 }
+exports.gcclosed = (nomor) => {
+  return `Group telah di tutup oleh @${nomor.split("@")[0]}, semua peserta tidak dapat mengirim pesan.`
+}
+exports.gcopened = (sender) => {
+  return `Group telah di buka oleh @${sender.split("@")[0]}, semua peserta dapat mengirim pesan.`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
