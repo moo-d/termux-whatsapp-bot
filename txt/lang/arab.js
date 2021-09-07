@@ -112,5 +112,5 @@ exports.wame = (sender) => {
 • _طلب عن طريق_ : *@${sender.split("@s.whatsapp.net")[0]}*
 • _رابط WhatsApp الخاص بك_ : *https://wa.me/${sender.split("@s.whatsapp.net")[0]}*
   *أو ( / )*
-  *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`,
+  *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`
 }
