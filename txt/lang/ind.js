@@ -77,6 +77,15 @@ exports.wrongf = () => {
 exports.kicked = () => {
   return `Mengeluarkan`
 }
+exports.succactwelcome = () => {
+  return `[BERHASIL] Mengaktifkan fitur welcome di group ini`
+}
+exports.succnonactwelcome = () => {
+  return `[BERHASIL] Menonaktifkan fitur welcome di group ini`
+}
+exports.enaordisa = () => {
+  return `enable untuk mengaktifkan, disable untuk menonaktifkan fitur.`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
