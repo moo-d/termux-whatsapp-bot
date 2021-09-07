@@ -398,6 +398,29 @@ async function startsBaileysBot() {
             }
           }, 0)
         break
+        case 'closegc':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          var nomor = mek.participant
+          const close = {
+            text: `${txtlang.gcclosed(nomor)}`,
+            contextInfo: { mentionedJid: [nomor] }
+          }
+          MUT.groupSettingChange (from, GroupSettingChange.messageSend, true);
+          reply(close)
+        break
+        case 'opengc':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          open = {
+            text: `${txtlang.gcopened(sender)}`,
+            contextInfo: { mentionedJid: [sender] }
+          }
+          MUT.groupSettingChange (from, GroupSettingChange.messageSend, false)
+          MUT.sendMessage(from, open, text, {quoted: mek})
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
