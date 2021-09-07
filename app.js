@@ -246,7 +246,7 @@ async function startsBaileysBot() {
         case 'listadmin':
         case 'adminslist':
         case 'adminlist':
-          if (!isGroup) return reply(mess.only.group)
+          if (!isGroup) return reply(txtlang.onlygroup())
           teks = `List admin group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
           no = 0
           for (let admon of groupAdmins) {
