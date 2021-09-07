@@ -361,6 +361,23 @@ async function startsBaileysBot() {
             reply(txtlang.enaordisa())
           }
         break
+        case 'privategc':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (args.length < 1) return reply('.....')
+          if (args[0] === 'enable') {
+            if (isPrivateGc) return reply(txtlang.done())
+            privategc_.push(from)
+            fs.writeFileSync('./src/privategc.json', JSON.stringify(privategc_))
+            reply(`${txtlang.succactprivategc()} ✔️`)
+          } else if (args[0] === 'disable') {
+            privategc_.splice(from, 1)
+            fs.writeFileSync('./src/privategc.json', JSON.stringify(privategc_))
+            reply(`${txtlang.succnonactprivategc()} ✔️`)
+          } else {
+            reply(txtlang.enaordisa())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
