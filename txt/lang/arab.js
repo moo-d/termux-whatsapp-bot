@@ -75,6 +75,15 @@ exports.wrongf = () => {
 exports.kicked = () => {
   return `طرد`
 }
+exports.succactwelcome = () => {
+  return `[ناجح] تمكين ميزة الترحيب في هذه المجموعة`
+}
+exports.succnonactwelcome = () => {
+  return `[تم بنجاح] تعطيل ميزة الترحيب في هذه المجموعة`
+}
+exports.enaordisa = () => {
+  return `تمكين لتمكين ، تعطيل لتعطيل الميزات`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
