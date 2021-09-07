@@ -344,6 +344,23 @@ async function startsBaileysBot() {
           linkgc = await MUT.groupInviteCode(from)
           reply('https://chat.whatsapp.com/'+linkgc)
         break
+        case 'welcome':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (args.length < 1) return reply('.....')
+          if (args[0] === 'enable') {
+            if (isWelcome) return reply(txtlang.done())
+            welcomejson.push(from)
+            fs.writeFileSync('./src/welcome.json', JSON.stringify(welcomejson))
+            reply(`${txtlang.succactwelcome()}✔️`)
+          } else if (args[0] === 'disable') {
+            welcomejson.splice(from, 1)
+            fs.writeFileSync('./src/welcome.json', JSON.stringify(welcomejson))
+            reply(`${txtlang.succnonactwelcome()} ✔️`)
+          } else {
+            reply(txtlang.enaordisa())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
