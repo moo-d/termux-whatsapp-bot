@@ -93,6 +93,12 @@ exports.succnonactprivategc = () => {
 exports.enaordisa = () => {
   return `enable to enable, disable to disable features.`
 }
+exports.gcclosed = (nomor) => {
+  return `The group has been closed by @${nomor.split("@")[0]}, all participants cannot send messages.`
+}
+exports.gcopened = (sender) => {
+  return `The group has been opened by @${number.split("@")[0]}, all participants can send messages.`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
