@@ -96,6 +96,9 @@ exports.gcclosed = (nomor) => {
 exports.gcopened = (sender) => {
   return `تم فتح المجموعة بواسطة @${number.split("@")[0]} ، يمكن لجميع المشاركين إرسال الرسائل.`
 }
+exports.pttmodechanged = () => {
+  return `تم تغيير Ptt mode إلى`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
