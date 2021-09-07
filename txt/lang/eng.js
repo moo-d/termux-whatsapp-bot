@@ -99,6 +99,9 @@ exports.gcclosed = (nomor) => {
 exports.gcopened = (sender) => {
   return `The group has been opened by @${number.split("@")[0]}, all participants can send messages.`
 }
+exports.pttmodechanged = () => {
+  return `Ptt mode has changed to`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
