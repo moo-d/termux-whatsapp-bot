@@ -66,6 +66,7 @@ exports.needtagimgcpt = () => {
 }
 exports.or = () => {
   return `أو`
+}
 exports.needtagmember = () => {
   return `عضو العلامة`
 }
