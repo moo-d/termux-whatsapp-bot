@@ -83,6 +83,12 @@ exports.succactwelcome = () => {
 exports.succnonactwelcome = () => {
   return `[BERHASIL] Menonaktifkan fitur welcome di group ini`
 }
+exports.succactprivategc = () => {
+  return `[BERHASIL] Mengaktifkan fitur privategc di group ini`
+}
+exports.succnonactprivategc = () => {
+  return `[BERHASIL] Menonaktifkan fitur privategc di group ini`
+}
 exports.enaordisa = () => {
   return `enable untuk mengaktifkan, disable untuk menonaktifkan fitur.`
 }
