@@ -68,6 +68,9 @@ exports.needtagimgcpt = () => {
 exports.or = () => {
   return `Atau`
 }
+exports.needtagmember = () => {
+  return `Tag member`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
