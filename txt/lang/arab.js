@@ -76,10 +76,16 @@ exports.kicked = () => {
   return `طرد`
 }
 exports.succactwelcome = () => {
-  return `[ناجح] تمكين ميزة الترحيب في هذه المجموعة`
+  return `[ناجح] تمكين ميزة welcome في هذه المجموعة`
 }
 exports.succnonactwelcome = () => {
-  return `[تم بنجاح] تعطيل ميزة الترحيب في هذه المجموعة`
+  return `[تم بنجاح] تعطيل ميزة welcome في هذه المجموعة`
+}
+exports.succactprivategc = () => {
+  return `[ناجح] تمكين ميزة privategc في هذه المجموعة`
+}
+exports.succnonactprivategc = () => {
+  return `[تم بنجاح] تعطيل ميزة privategc في هذه المجموعة`
 }
 exports.enaordisa = () => {
   return `تمكين لتمكين ، تعطيل لتعطيل الميزات`
