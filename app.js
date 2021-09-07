@@ -307,18 +307,34 @@ async function startsBaileysBot() {
           if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
           if (args.length < 1) return reply('.....')
           if (args[0].startsWith('08')) return reply(txtlang.countrynum())
-          try {                                                                                                  num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+          try {
+            num = `${args[0].replace(/ /g, '')}@s.whatsapp.net
             MUT.groupAdd(from, [num])
             reply(txtlang.done())
           } catch (e) {
-            console.log('Error :', e)                                                                            reply(txtlang.fail())
+            console.log('Error :', e)
+            reply(txtlang.fail())
           }
         break
-        break
         case 'kick':
-          if (!isGroup) return reply(txtlang.onlygroup())                                                                                              if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
           if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
           if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply(txtlang.needtagmember())
+          mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+          if (mentioned.length > 1) {
+            teks =  txtlang.acc() + txtlang.kicked() + ` :\n`
+            for (let _ of mentioned) {
+              teks += `@${_.split('@')[0]}\n`
+            }
+            mentions(teks, mentioned, true)
+            MUT.groupRemove(from, mentioned)
+          } else {
+            mentions(`${txtlang.acc()} ${txtlang.kicked()} : @${mentioned[0].split('@')[0]}`, mentioned, true)
+            MUT.groupRemove(from, mentioned)
+            MUT.sendMessage(mentioned, txtlang.goodbye(), text)
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
