@@ -131,6 +131,7 @@ async function startsBaileysBot() {
       const isSimi = isGroup ? simijson.includes(from) : false
       const isOwner = ownerNumber.includes(sender)
       const isPrivateGc = isGroup ? privategc_.includes(from) : false
+      const isLevelingOn = isGroup ? _leveling.includes(from) : false
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
