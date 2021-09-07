@@ -69,6 +69,9 @@ exports.or = () => {
 exports.needtagmember = () => {
   return `عضو العلامة`
 }
+exports.wrongf = () => {
+  return `عذرا ، الصيغة التي أدخلتها خاطئة`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
