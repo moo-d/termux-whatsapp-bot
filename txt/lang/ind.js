@@ -71,6 +71,9 @@ exports.or = () => {
 exports.needtagmember = () => {
   return `Tag member`
 }
+exports.wrongf = () => {
+  return 'Maaf, format yang anda masukan salah'
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
