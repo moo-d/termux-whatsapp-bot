@@ -66,6 +66,8 @@ exports.needtagimgcpt = () => {
 }
 exports.or = () => {
   return `أو`
+exports.needtagmember = () => {
+  return `عضو العلامة`
 }
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
