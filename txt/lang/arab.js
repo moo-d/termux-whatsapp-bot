@@ -90,6 +90,12 @@ exports.succnonactprivategc = () => {
 exports.enaordisa = () => {
   return `تمكين لتمكين ، تعطيل لتعطيل الميزات`
 }
+exports.gcclosed = (nomor) => {
+  return `تم إغلاق المجموعة بواسطة @${number.split("@")[0]} ، لا يمكن لجميع المشاركين إرسال الرسائل.`
+}
+exports.gcopened = (sender) => {
+  return `تم فتح المجموعة بواسطة @${number.split("@")[0]} ، يمكن لجميع المشاركين إرسال الرسائل.`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
