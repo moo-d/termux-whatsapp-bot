@@ -308,7 +308,7 @@ async function startsBaileysBot() {
           if (args.length < 1) return reply('.....')
           if (args[0].startsWith('08')) return reply(txtlang.countrynum())
           try {
-            num = `${args[0].replace(/ /g, '')}@s.whatsapp.net
+            num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
             MUT.groupAdd(from, [num])
             reply(txtlang.done())
           } catch (e) {
