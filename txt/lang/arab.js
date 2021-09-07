@@ -72,6 +72,9 @@ exports.needtagmember = () => {
 exports.wrongf = () => {
   return `عذرا ، الصيغة التي أدخلتها خاطئة`
 }
+exports.kicked = () => {
+  return `طرد`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
