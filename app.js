@@ -301,7 +301,19 @@ async function startsBaileysBot() {
             reply('Broadcast Group' + txtlang.done())
           }
         break
-        
+        case 'add':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          if (args.length < 1) return reply('.....')
+          if (args[0].startsWith('08')) return reply(txtlang.countrynum())
+          try {                                                                                                  num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+            MUT.groupAdd(from, [num])
+            reply(txtlang.done())
+          } catch (e) {
+            console.log('Error :', e)                                                                            reply(txtlang.fail())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
