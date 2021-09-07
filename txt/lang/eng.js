@@ -84,6 +84,12 @@ exports.succactwelcome = () => {
 exports.succnonactwelcome = () => {
   return `[SUCCESSFUL] Disable the welcome feature in this group`
 }
+exports.succactprivategc = () => {
+  return `[SUCCESSFUL] Enable the privategc feature in this group`
+}
+exports.succnonactprivategc = () => {
+  return `[SUCCESSFUL] Disable the privategc feature in this group`
+}
 exports.enaordisa = () => {
   return `enable to enable, disable to disable features.`
 }
