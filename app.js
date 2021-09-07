@@ -249,7 +249,8 @@ async function startsBaileysBot() {
           teks = `List admin group *${groupMetadata.subject}*\nTotal : ${groupAdmins.length}\n\n`
           no = 0
           for (let admon of groupAdmins) {
-            no += 1                                                                                                                                      teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
+            no += 1
+            teks += `[${no.toString()}] @${admon.split('@')[0]}\n`
           }
           mentions(teks, groupAdmins, true)
         break
@@ -422,7 +423,8 @@ async function startsBaileysBot() {
           MUT.sendMessage(from, open, text, {quoted: mek})
         break
         case 'setpttmode':
-          if (args.length < 1) return reply('.....')                                                                                                   if (!isOwner) return reply(txtlang.onlyowner())
+          if (args.length < 1) return reply('.....')
+          if (!isOwner) return reply(txtlang.onlyowner())
           if (args[0] == 'true') {
             pttmode = 'true'
             reply(txtlang.pttmodechanged() + ` ${pttmode}`)
