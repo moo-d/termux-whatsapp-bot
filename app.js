@@ -378,6 +378,26 @@ async function startsBaileysBot() {
             reply(txtlang.enaordisa())
           }
         break
+        case 'leave':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          setTimeout( () => {
+            MUT.groupLeave (from)
+          }, 5000)
+          setTimeout( () => {
+            if (pttmode == 'true') {
+              if (txtlang == ind) {
+                indgoodbye = fs.readFileSync('./media/ptt/goodbyeind.mp3')
+                MUT.sendMessage(from, indgoodbye, audio, { mimetype: 'audio/mp4', quoted:mek, ptt: true})
+              } else {
+                audgoodbye = fs.readFileSync('./media/ptt/goodbye.mp3')
+                MUT.sendMessage(from, audgoodbye, audio, { mimetype: 'audio/mp4', quoted:mek, ptt: true})
+              }
+            } else if (pttmode = 'false') {
+              MUT.sendMessage(from, txtlang.goodbye(), text)
+            }
+          }, 0)
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
