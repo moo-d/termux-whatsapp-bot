@@ -75,6 +75,9 @@ exports.needtagmember = () => {
 exports.wrongf = () => {
   return 'Sorry, the format you entered is wrong'
 }
+export.kicked = () => {
+  return `Ejected`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
