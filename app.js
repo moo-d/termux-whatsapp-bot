@@ -563,6 +563,34 @@ async function startsBaileysBot() {
             reply(txtlang.needimgcpt() + ' ' + txtlang.or() + ' ' + txtlang.needtagimgcpt())
           }
         break
+        case 'toimg':
+          if (!isQuotedSticker) return reply(txtlang.needtagstickcpt())
+          reply(txtlang.wait())
+          encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+          media = await MUT.downloadAndSaveMediaMessage(encmedia)
+          ran = getRandom('.png')
+          exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+            fs.unlinkSync(media)
+            if (err) return reply(txtlang.fail())
+            buffer = fs.readFileSync(ran)
+            MUT.sendMessage(from, buffer, image, {quoted: mek, caption: txtlang.done()})
+            fs.unlinkSync(ran)
+          })
+        break
+        case 'tomp3':
+          if (!isQuotedVideo) return reply(txtlang.needtagvidcpt())
+          reply(txtlang.wait())
+          encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+          media = await MUT.downloadAndSaveMediaMessage(encmedia)
+          ran = getRandom('.mp4')
+          exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+            fs.unlinkSync(media)
+            if (err) return reply(txtlang.fail())
+            buffer = fs.readFileSync(ran)
+            MUT.sendMessage(from, buffer, audio, {mimetype: 'audio/mp4', quoted: mek})
+            fs.unlinkSync(ran)
+          })
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
