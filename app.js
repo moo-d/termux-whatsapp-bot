@@ -172,6 +172,8 @@ async function startsBaileysBot() {
       const isOwner = ownerNumber.includes(sender)
       const isPrivateGc = isGroup ? privategc_.includes(from) : false
       const isLevelingOn = isGroup ? _leveling.includes(from) : false
+      let authorname = MUT.contacts[from] != undefined ? MUT.contacts[from].vname || MUT.contacts[from].notify : undefined
+      if (authorname != undefined) { } else { authorname = groupName }
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
