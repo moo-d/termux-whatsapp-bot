@@ -101,6 +101,15 @@ exports.gcopened = (sender) => {
 exports.pttmodechanged = () => {
   return `Ptt mode telah diubah ke`
 }
+exports.fail = () => {
+ return `Gagal`
+}
+exports.needtagstickcpt = () => {
+  return `Tag stickernya`
+}
+exports.needtagvidcpt = () => {
+  return `Tag videonya`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
