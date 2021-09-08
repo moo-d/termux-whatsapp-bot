@@ -100,6 +100,15 @@ exports.gcopened = (sender) => {
 exports.pttmodechanged = () => {
   return `تم تغيير Ptt mode إلى`
 }
+exports.fail = () => {
+ return `باءت بالفشل`
+}
+exports.needtagstickcpt = () => {
+  return `الرد على الملصق`
+}
+exports.needtagvidcpt = () => {
+  return `الرد على الفيديو`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
