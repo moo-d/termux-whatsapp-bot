@@ -622,6 +622,51 @@ async function startsBaileysBot() {
             reply(txtlang.enaordisa())
           }
         break
+        case 'setppgc':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
+          reply(txtlang.wait())
+          const media = await MUT.downloadAndSaveMediaMessage(encmedia)
+          await MUT.updateProfilePicture (from, media)
+          reply(txtlang.done())
+        break
+        case 'delete':
+        case 'del':
+          if (!isGroup)return reply(txtlang.onlygroup())
+          try {
+            MUT.deleteMessage(from, { id: mek.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
+          } catch (e) {
+            reply(txtlang.onlybotdel())
+          }
+        break
+        case 'fitnah':
+        case 'fake':
+          if (args.length < 1) return reply(txtlang.exafakecmd())
+          var gh = body.slice(7)
+          mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
+          var replace = gh.split("|")[0];
+          var target = gh.split("|")[1];
+          var bot = gh.split("|")[2];
+          MUT.sendMessage(from, `${bot}`, text, {
+            quoted: {
+              key: {
+                fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from }: {})
+              }, message: {
+                conversation: `${target}`
+              }
+            }
+          })
+        break
+        case 'setname':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          let idgrup = `${from.split("@s.whatsapp.net")[0]}`;
+          MUT.groupUpdateSubject(idgrup, `${body.slice(9)}`)
+          reply(txtlang.namegcchanged())
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
