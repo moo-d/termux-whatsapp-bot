@@ -109,11 +109,34 @@ exports.needtagstickcpt = () => {
 exports.needtagvidcpt = () => {
   return `الرد على الفيديو`
 }
+exports.levelingalron = () => {
+  return `ميزة Leveling نشطة بالفعل`
+}
+exports.levelon = () => {
+  return `[ينجح] قم بتنشيط ميزة Leveling`
+}
+exports.leveloff = () => {
+  return `[ينجح] قم بتعطيل ميزة Leveling`
+}
+exports.levelingon = () => {
+  return `لم يتم تنشيط ميزة Leveling في هذه المجموعة.`
+}
+exports.levelnol = () => {
+  return `مستواك لا يزال 0`
+}
+exports.levelview = (sem, userXp, userLevel, pushname) => {
+  return `
+*[ ${pushname} مستوى ]*
+• *اسم* : ${pushname}
+• *إكس بي* : ${userXp}
+• *مستوى* : ${userLevel}
+`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ يصل المستوى ]*
 • *اسم*: ${sender}
-• *XP*: ${getLevelingXp(sender)}
+• *إكس بي*: ${getLevelingXp(sender)}
 • *مستوى*: ${getLevel} ~> ${getLevelingLevel(sender)}
 تهاني!! 🎉🎉`
 }
