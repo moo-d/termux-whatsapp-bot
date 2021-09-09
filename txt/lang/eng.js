@@ -126,6 +126,15 @@ exports.levelingon = () => {
 exports.levelnol = () => {
   return `Your level is still 0`
 }
+exports.onlybotdel = () => {
+  return `Can only delete messages from bots`
+}
+exports.exafakecmd = () => {
+  return `Example: @tag|texttarget|textbot`
+}
+exports.namegcchanged = () => {
+  return `[SUCCESS] Renaming this group`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
