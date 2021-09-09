@@ -591,6 +591,36 @@ async function startsBaileysBot() {
             fs.unlinkSync(ran)
           })
         break
+        case 'level':
+          if (!isLevelingOn) return reply(txtlang.levelingon())
+          if (!isGroup) return reply(txtlang.onlygroup())
+          const userLevel = getLevelingLevel(sender)
+          const userXp = getLevelingXp(sender)
+          if (userLevel === undefined && userXp === undefined) return reply(txtlang.levelnol())
+          sem = sender.replace('@s.whatsapp.net','')
+          resul = txtlang.levelview(sem, userXp, userLevel, pushname)
+          MUT.sendMessage(from, resul, text, { quoted: mek})
+          .catch(async (err) => {
+            console.error(err)
+          })
+          break
+        case 'leveling':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (args.length < 1) return reply(txtlang.enaordisa())
+          if (args[0] === 'enable') {
+            if (isLevelingOn) return reply(txtlang.levelingalron())
+            _leveling.push(from)
+            fs.writeFileSync('./src/leveling.json', JSON.stringify(_leveling))
+            reply(txtlang.levelon())
+          } else if (args[0] === 'disable') {
+            _leveling.splice(from, 1)
+            fs.writeFileSync('./src/leveling.json', JSON.stringify(_leveling))
+            reply(txtlang.leveloff())
+          } else {
+            reply(txtlang.enaordisa())
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
