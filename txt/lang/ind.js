@@ -110,6 +110,37 @@ exports.needtagstickcpt = () => {
 exports.needtagvidcpt = () => {
   return `Tag videonya`
 }
+exports.levelingalron = () => {
+  return `Leveling telah aktif sebelumnya`
+}
+exports.levelon = () => {
+  return `[BERHASIL] Mengaktifkan fitur leveling`
+}
+exports.leveloff = () => {
+  return `[BERHASIL] Menonaktifkan fitur leveling`
+}
+exports.levelingon = () => {
+  return `Fitur leveling belum diaktifkan di group ini.`
+}
+exports.levelnol = () => {
+  return `Levelmu masih 0`
+}
+exports.levelview = (sem, userXp, userLevel, pushname) => {
+  return `
+*[ ${pushname} LEVEL ]*
+• *Name* : ${pushname}
+• *XP* : ${userXp}
+• *Level* : ${userLevel}
+`
+}
+exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
+  return `
+*[ LEVEL UP ]*
+• *Name*: ${sender}
+• *XP*: ${getLevelingXp(sender)}
+• *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
+Selamat!! 🎉🎉`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
