@@ -111,6 +111,37 @@ exports.needtagstickcpt = () => {
 exports.needtagvidcpt = () => {
   return `Tag the video`
 }
+exports.levelingalron = () => {
+  return `Leveling has been active before`
+}
+exports.levelon = () => {
+  return `[SUCCES] Enable leveling feature`
+}
+exports.leveloff = () => {
+  return `[SUCCESS] Disable leveling feature`
+}
+exports.levelingon = () => {
+  return `The leveling feature has not been activated in this group.`
+}
+exports.levelnol = () => {
+  return `Your level is still 0`
+}
+exports.levelview = (sem, userXp, userLevel, pushname) => {
+  return `
+*[ ${pushname} LEVEL ]*
+• *Name* : ${pushname}
+• *XP* : ${userXp}
+• *Level* : ${userLevel}
+`
+}
+exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
+  return `
+*[ LEVEL UP ]*
+• *Name*: ${sender}
+• *XP*: ${getLevelingXp(sender)}
+• *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
+Selamat!! 🎉🎉`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
