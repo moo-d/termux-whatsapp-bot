@@ -125,6 +125,15 @@ exports.levelingon = () => {
 exports.levelnol = () => {
   return `Levelmu masih 0`
 }
+exports.onlybotdel = () => {
+  return `Hanya dapat menghapus pesan dari bot`
+}
+exports.exafakecmd = () => {
+  return `Contoh: @tag|texttarget|textbot`
+}
+exports.namegcchanged = () => {
+  return `[BERHASIL] Mengganti nama group ini`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
