@@ -1,5 +1,6 @@
 {
   "prefix": ".",
   "ownernum": "62888xxx",
-  "pttmode": false
+  "removebgApiKey":"Your-ApiKey",
+  "pttmode": "false"
 }
