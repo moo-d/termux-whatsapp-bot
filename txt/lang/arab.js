@@ -124,6 +124,15 @@ exports.levelingon = () => {
 exports.levelnol = () => {
   return `مستواك لا يزال 0`
 }
+exports.onlybotdel = () => {
+  return `يمكن فقط حذف الرسائل من الروبوتات`
+}
+exports.exafakecmd = () => {
+  return `مثال: @tag|texttarget|textbot`
+}
+exports.namegcchanged = () => {
+  return `[ينجح] أعد تسمية هذه المجموعة`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} مستوى ]*
