@@ -567,11 +567,11 @@ async function startsBaileysBot() {
         case 'toimg':
           if (!isQuotedSticker) return reply(txtlang.needtagstickcpt())
           reply(txtlang.wait())
-          encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-          media = await MUT.downloadAndSaveMediaMessage(encmedia)
+          var encmedia_ = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+          var media_ = await MUT.downloadAndSaveMediaMessage(encmedia_)
           ran = getRandom('.png')
-          exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-            fs.unlinkSync(media)
+          exec(`ffmpeg -i ${media_} ${ran}`, (err) => {
+            fs.unlinkSync(media_)
             if (err) return reply(txtlang.fail())
             buffer = fs.readFileSync(ran)
             MUT.sendMessage(from, buffer, image, {quoted: mek, caption: txtlang.done()})
