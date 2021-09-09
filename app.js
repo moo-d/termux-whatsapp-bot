@@ -156,7 +156,7 @@ async function startsBaileysBot() {
       const args = body.trim().split(/ +/).slice(1)
       const isCmd = body.startsWith(prefix)
       const botNumber = MUT.user.jid
-      const ownerNumber = [setting.ownernum] // replace this with your number
+      const ownerNumber = [setting.ownernum + '@s.whatsapp.net'] // replace this with your number
       const isGroup = from.endsWith('@g.us')
       const sender = isGroup ? mek.participant : mek.key.remoteJid
       const groupMetadata = isGroup ? await MUT.groupMetadata(from) : ''
@@ -174,6 +174,7 @@ async function startsBaileysBot() {
       const isLevelingOn = isGroup ? _leveling.includes(from) : false
       let authorname = MUT.contacts[from] != undefined ? MUT.contacts[from].vname || MUT.contacts[from].notify : undefined
       if (authorname != undefined) { } else { authorname = groupName }
+      pushname = MUT.contacts[sender] != undefined ? MUT.contacts[sender].vname || MUT.contacts[sender].notify : undefined
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
