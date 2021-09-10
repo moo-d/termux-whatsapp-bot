@@ -187,7 +187,7 @@ exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtim
 • نسخة WhatsApp : ${waversion}
 `
 }
-exports.verify = (serialUser, nama user, sender) => {
+exports.verify = (serialUser, namaUser, sender) => {
 return `
 *[تحقق]*
 رمز التسلسل : *${serialUser}*
