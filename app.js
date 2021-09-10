@@ -24,6 +24,7 @@ const setting = JSON.parse(fs.readFileSync('./lib/setting.json'))
 const apilink = JSON.parse(fs.readFileSync('./lib/apilink.json'))
 const { eng, ind, arab } = require('./txt/lang/')
 const txtlang = ind
+const { getRegisteredRandomId, addRegisteredUser, createSerial, checkRegisteredUser } = require('./lib/function/verif')
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -206,6 +207,7 @@ async function startsBaileysBot() {
       const isOwner = ownerNumber.includes(sender)
       const isPrivateGc = isGroup ? privategc_.includes(from) : false
       const isLevelingOn = isGroup ? _leveling.includes(from) : false
+      isRegister = checkRegisteredUser(sender)
       let authorname = MUT.contacts[from] != undefined ? MUT.contacts[from].vname || MUT.contacts[from].notify : undefined
       if (authorname != undefined) { } else { authorname = groupName }
       pushname = MUT.contacts[sender] != undefined ? MUT.contacts[sender].vname || MUT.contacts[sender].notify : undefined
@@ -339,7 +341,8 @@ async function startsBaileysBot() {
       switch(command) {
 	case 'help':
         case 'menu':
-          sendButMessage(from, setting.botname, help(prefix), [
+          thumbmn = fs.readFileSync('./media/photo/mn.jpg')
+          sendButLok(from, setting.botname, help(prefix), thumbmn, [
             {
               buttonId: `${prefix}info`,
               buttonText: {
@@ -358,13 +361,6 @@ async function startsBaileysBot() {
               buttonId: `${prefix}author`,
               buttonText: {
                 displayText: `Author`,
-              },
-              type: 1,
-            },
-            {
-              buttonId: `${prefix}github`,
-              buttonText: {
-                displayText: `GitHub`,
               },
               type: 1,
             },
