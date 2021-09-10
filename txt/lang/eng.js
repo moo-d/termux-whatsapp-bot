@@ -178,3 +178,22 @@ exports.wame = (sender) => {
   *Or ( / )*
   *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`
 }
+exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, speedbot) => {
+  return `
+• Name : *${setting.botname}*
+• Bot Version : 0.0.1
+• Browser : *${runbrowser}*
+• Browser Version : *${browserversion}*
+• Speed : ${speedbot}
+• Runtime : *${runtimebot}*
+
+[ *DEVICE* ]
+• Device : ${oshp}
+• OS Version : ${osversion}
+• Device Version : ${devicemodel}
+• RAM : ${ramdevice}MB / ${ramdevicetotal}MB
+• MCC : ${mcc}
+• MNC : ${mnc}
+• WA Version : ${waversion}
+`
+}
