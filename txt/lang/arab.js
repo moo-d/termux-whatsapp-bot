@@ -133,6 +133,18 @@ exports.exafakecmd = () => {
 exports.namegcchanged = () => {
   return `[ينجح] أعد تسمية هذه المجموعة`
 }
+exports.goodnight = () => {
+  return `مساء الخير🌃`
+}
+exports.goodafternoon = () => {
+  return `طاب يومك🌆`
+}
+exports.goodafternun = () => {
+  return `طاب نهارك🌇`
+}
+exports.goodmorning = () => {
+  return `صباح الخير🌅`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} مستوى ]*
