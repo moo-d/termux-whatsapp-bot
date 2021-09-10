@@ -168,3 +168,22 @@ exports.wame = (sender) => {
   *أو ( / )*
   *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`
 }
+exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, speedbot) => {
+  return `
+• اسم : *${setting.botname}*
+• نسخة بوت : *0.0.1*
+• المتصفح : *${runbrowser}*
+• إصدار المستعرض : *${browserversion}*
+• سرعة : ${speedbot}
+• مدة العرض : *${runtimebot}*
+
+[ *جهاز* ]
+• جهاز : ${oshp}
+• إصدار نظام التشغيل : ${osversion}
+• إصدار الجهاز : ${devicemodel}
+• RAM : ${ramdevice}MB / ${ramdevicetotal}MB
+• MCC : ${mcc}
+• MNC : ${mnc}
+• نسخة WhatsApp : ${waversion}
+`
+}
