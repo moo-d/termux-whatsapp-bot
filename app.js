@@ -854,6 +854,42 @@ async function startsBaileysBot() {
         case 'owner':
           MUT.sendMessage(from, { displayname: "Jeff", vcard: vcard }, MessageType.contact, { quoted: mek })
         break
+        case 'verify':
+        case 'daftar':
+        case 'register':
+          if (isRegister) return reply(txtlang.hasverifyed())
+          const namaUser = `${pushname}`
+          const umurUser = `${sender}`
+          const serialUser = createSerial(20)
+          veri = sender
+          if (isGroup) {
+            addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+            hasil = txtlang.verify(serialUser, namaUser, sender)
+            sendButMessage(from, setting.botname, hasil, [
+              {
+                buttonId: `${prefix}help`,
+                buttonText: {
+                  displayText: `Menu`,
+                },
+                type: 1,
+              },
+            ], {quoted: mek});
+            console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'), 'in', color(sender || groupName))
+          } else {
+            addRegisteredUser(sender, namaUser, umurUser, time, serialUser)
+            hasil = txtlang.verify(serialUser, namaUser, sender)
+            sendButMessage(from, setting.botname, hasil, [
+              {
+                buttonId: `${prefix}help`,
+                buttonText: {
+                  displayText: `Menu`,
+                },
+                type: 1,
+              },
+            ], {quoted: mek});
+            console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
+          }
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
