@@ -842,8 +842,7 @@ async function startsBaileysBot() {
           mrfzvxnum = '6282223014661@s.whatsapp.net'
           kysxcodenum = '62815260684977@s.whatsapp.net'
           hadinum = '628990911211@s.whatsapp.net'
-          ppownlink = 'https://avatars.githubusercontent.com/u/75057738?v=4'
-          owner = await getBuffer(ppownlink)
+          owner = fs.readFileSync('./.github/rm/20210821_110622.jpg')
           const been = {
             text: `Author:\n- @${moo_dnum.split("@")[0]}\n- @${mrfzvxnum.split("@")[0]}\n- @${kysxcodenum.split("@")[0]}\n- @{hadinum.split("@")[0]}`,
             contextInfo: {
