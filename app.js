@@ -813,10 +813,11 @@ async function startsBaileysBot() {
           oshp = device_manufacturer
           osversion = os_version
           devicemodel = device_model
+          speedbot = process.uptime()
           ramdevice = process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}
           ramdevicetotal = Math.round(require('os').totalmem / 1024 / 1024)
           waversion = MUT.user.phone.wa_version
-          teks = txtlang.infobot(uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion)
+          teks = txtlang.infobot(uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, speedbot)
           reply(teks)
         break
 	default:
