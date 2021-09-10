@@ -287,6 +287,39 @@ async function startsBaileysBot() {
           options
         );
       };
+      let d = new Date();
+      let locale = "id";
+      let gmt = new Date(0).getTime() - new Date("1 January 1970").getTime();
+      let weton = ["Pahing", "Pon", "Wage", "Kliwon", "Legi"][
+        Math.floor((d * 1 + gmt) / 84600000) % 5
+      ];
+      let week = d.toLocaleDateString(locale, { weekday: "long" });
+      let date = d.toLocaleDateString(locale, {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+      let waktu = d.toLocaleDateString(locale, {
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+      });
+      const time2 = moment().tz("Asia/Jakarta").format("HH:mm:ss");
+      if (time2 < "24:59:00") {
+        var ucapanWaktu = txtlang.goodnight();
+      }
+      if (time2 < "18:00:00") {
+        var ucapanWaktu = txtlang.goodafternoon();
+      }
+      if (time2 < "15:00:00") {
+        var ucapanWaktu = txtlang.goodafternun();
+      }
+      if (time2 < "11:00:00") {
+        var ucapanWaktu = txtlang.goodmorning();
+      }
+      if (time2 < "05:00:00") {
+        var ucapanWaktu = txtlang.goodnight();
+      }
       colors = ['red','white','black','blue','yellow','green']
       const isMedia = (type === 'imageMessage' || type === 'videoMessage')
       const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
@@ -298,13 +331,35 @@ async function startsBaileysBot() {
       if (!isCmd && isGroup) console.log('[RECV]', time, 'Message', 'from', sender.split('@')[0], 'in', groupName, 'args :', args.length)
       switch(command) {
 	case 'help':
-	case 'menu':
-	  MUT.sendMessage(from, txtlang.help(prefix), text)
-	break
+        case 'menu':
+          sendButMessage(from, setting.botname, txtlang.help(prefix), [
+            {
+              buttonId: `${prefix}info`,
+              buttonText: {
+                displayText: `Info`,
+              },
+              type: 1,
+            },
+            {
+              buttonId: `${prefix}author`,
+              buttonText: {
+                displayText: `Author`,
+              },
+              type: 1,
+            },
+            {
+              buttonId: `${prefix}github`,
+              buttonText: {
+                displayText: `GitHub`,
+              },
+              type: 1,
+            },
+          ], {quoted: mek});
+        break
         case 'meme':
           reply(txtlang.wait())
           try {
-            memeilink = await fetchJson(apilink + `darkjokes`, { method: 'get'})
+            memeilink = await fetchJson(apilink.mycodeit + `darkjokes`, { method: 'get'})
             memeimg = await getBuffer(memeilink.result)
             MUT.sendMessage(from, memeimg, image, { quoted:mek, caption:txtlang.done()})
           } catch(e) {
