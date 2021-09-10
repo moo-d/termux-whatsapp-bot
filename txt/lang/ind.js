@@ -196,7 +196,7 @@ exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtim
 • Versi Wa : ${waversion}
 `
 }
-exports.verify = (serialUser, nama user, sender) => {
+exports.verify = (serialUser, namaUser, sender) => {
 return `
 *[VERIFIKASI]*
 Serial Kode : *${serialUser}*
