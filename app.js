@@ -890,6 +890,13 @@ async function startsBaileysBot() {
             console.log(color('[REGISTER]'), color(time, 'yellow'), 'Name:', color(namaUser, 'cyan'), 'Age:', color(umurUser, 'cyan'), 'Serial:', color(serialUser, 'cyan'))
           }
         break
+        case 'setdesc':
+          if (!isGroup) return reply(txtlang.onlygroup())
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
+          if (!isBotGroupAdmins) return reply(txtlang.onlybadmin())
+          MUT.groupUpdateDescription(from, `${body.slice(9)}`)
+          MUT.sendMessage(from, txtlang.done(), text, { quoted: mek })
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
