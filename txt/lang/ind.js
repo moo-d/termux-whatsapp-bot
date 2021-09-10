@@ -177,19 +177,19 @@ exports.wame = (sender) => {
   *Atau ( / )*
   *https://api.whatsapp.com/send?phone=${sender.split("@")[0]}*`
 }
-exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, kyun) => {
+exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, speedbot) => {
   return `
 • Nama : *${setting.botname}*
 • Versi Bot : 0.0.1
 • Browser : *${runbrowser}*
 • Versi Browser : *${browserversion}*
-• Speed : ${}
-• Runtime : *${kyun(uptime)}*
+• Speed : ${speedbot}
+• Runtime : *${runtimebot}*
 
 [ *DEVICE* ]
-• Device : ${devicemodel}
-• Versi OS : ${oshp}
-• Versi Device : ${osversion}
+• Device : ${oshp}
+• Versi OS : ${osversion}
+• Versi Device : ${devicemodel}
 • RAM : ${ramdevice}MB / ${ramdevicetotal}MB
 • MCC : ${mcc}
 • MNC : ${mnc}
