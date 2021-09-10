@@ -1,7 +1,8 @@
 {
   "prefix": ".",
   "ownernum": "62888xxx",
-  "removebgApiKey":"Your-ApiKey",
-  "botname":"BAILEYS-WABOT",
+  "removebgApiKey": "Your-ApiKey",
+  "botname": "BAILEYS-WABOT",
+  "ownername": "moo-d",
   "pttmode": "false"
 }
