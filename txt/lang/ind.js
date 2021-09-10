@@ -157,7 +157,7 @@ exports.levelview = (sem, userXp, userLevel, pushname) => {
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
-• *Name*: ${sender}
+• *Nama*: ${sender}
 • *XP*: ${getLevelingXp(sender)}
 • *Level*: ${getLevel} ~> ${getLevelingLevel(sender)}
 Selamat!! 🎉🎉`
