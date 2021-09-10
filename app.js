@@ -221,7 +221,7 @@ async function startsBaileysBot() {
         case 'meme':
           reply(txtlang.wait())
           try {
-            memeilink = await fetchJson(`${mycodeit}darkjokes`, { method: 'get'})
+            memeilink = await fetchJson(apilink + `darkjokes`, { method: 'get'})
             memeimg = await getBuffer(memeilink.result)
             MUT.sendMessage(from, memeimg, image, { quoted:mek, caption:txtlang.done()})
           } catch(e) {
