@@ -220,23 +220,73 @@ async function startsBaileysBot() {
       const mentions = (teks, memberr, id) => {
 	(id == null || id == undefined || id == false) ? MUT.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : MUT.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
       }
-      if (isGroup && isLevelingOn) {
-        const currentLevel = getLevelingLevel(sender)
-        const checkId = getLevelingId(sender)
-        try {
-          if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
-          const amountXp = Math.floor(Math.random() * 10) + 500
-          const requiredXp = 5000 * (Math.pow(2, currentLevel) - 1)
-          const getLevel = getLevelingLevel(sender)
-          addLevelingXp(sender, amountXp)
-          if (requiredXp <= getLevelingXp(sender)) {
-            addLevelingLevel(sender, 1)
-            await reply(txtlang.levelup(sender, getLevelingXp, getLevel, getLevelingLevel))
-          }
-        } catch (err) {
-          console.error(err)
-        }
-      }
+            const sendButMessage = (from, text1, desc1, but = [], options = {}) => {
+        const buttonMessage = {
+          contentText: text1,
+          footerText: desc1,
+          buttons: but,
+          headerType: 1,
+        };
+        MUT.sendMessage(
+          from,
+          buttonMessage,
+          MessageType.buttonsMessage,
+          options
+        );
+      };
+      const sendButLok = async (from, text1, desc1, gam1, but = [], options = {}) => {
+        kma = gam1;
+        mhan = await MUT.prepareMessage(from,  {degreesLatitude: 0, degreesLongitude: 0, jpegThumbnail: gam1}, location)
+        const buttonMessages = {
+          locationMessage: mhan.message.locationMessage,
+          contentText: text1,
+          footerText: desc1,
+          buttons: but,
+          headerType: 6,
+        };
+        MUT.sendMessage(from, buttonMessages, MessageType.buttonsMessage, {quoted: mek});
+      };
+      const sendButImage = async (from, text1, desc1, gam1, but = [], options = {} ) => {
+        kma = gam1;
+        mhan = await MUT.prepareMessage(from, kma, image);
+        const buttonMessages = {
+          imageMessage: mhan.message.imageMessage,
+          contentText: text1,
+          footerText: desc1,
+          buttons: but,
+          headerType: 4,
+        };
+        MUT.sendMessage(
+          from,
+          buttonMessages,
+          MessageType.buttonsMessage,
+          {quoted: mek}
+        );
+      };
+      const sendButVideo = async (
+        from,
+        text1,
+        desc1,
+        vid1,
+        but = [],
+        options = {}
+      ) => {
+        kma = vid1;
+        mhan = await MUT.prepareMessage(from, kma, video);
+        const buttonMessages = {
+          videoMessage: mhan.message.videoMessage,
+          contentText: text1,
+          footerText: desc1,
+          buttons: but,
+          headerType: 5,
+        };
+        MUT.sendMessage(
+          from,
+          buttonMessages,
+          MessageType.buttonsMessage,
+          options
+        );
+      };
       colors = ['red','white','black','blue','yellow','green']
       const isMedia = (type === 'imageMessage' || type === 'videoMessage')
       const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
