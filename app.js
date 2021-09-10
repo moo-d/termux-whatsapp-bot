@@ -893,6 +893,13 @@ async function startsBaileysBot() {
           MUT.groupUpdateDescription(from, `${body.slice(9)}`)
           MUT.sendMessage(from, txtlang.done(), text, { quoted: mek })
         break
+        case 'randomanime':
+          if (!isRegister) return reply('kamu belum terverifikasi')
+          var animelink = apilink.mycodeit + 'anime'
+          var animebuf = await getBuffer(animelink)
+          reply(txtlang.wait())
+          MUT.sendMessage(from, animebuf, image, {quoted:mek})
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
