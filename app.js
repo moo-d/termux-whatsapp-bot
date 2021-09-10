@@ -3,7 +3,8 @@ const {
   MessageType,
   Presence,
   Mimetype,
-  GroupSettingChange
+  GroupSettingChange,
+  MessageOptions
 } = require('@adiwajshing/baileys')
 const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel } = require('./lib/function/leveling')
 const { color, bgcolor } = require('./lib/color')
