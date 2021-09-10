@@ -1,12 +1,3 @@
-exports.help = (prefix) => {
-  return `
-[الأساسية]
-=> ${prefix}help
-=> ${prefix}menu
-[مرح]
-=> ${prefix}meme
-`
-}
 exports.wait = () => {
   return `انتظر...`
 }
