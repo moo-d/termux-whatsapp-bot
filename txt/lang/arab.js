@@ -145,6 +145,9 @@ exports.goodafternun = () => {
 exports.goodmorning = () => {
   return `صباح الخير🌅`
 }
+exports.hasverifyed = () => {
+  return `لقد قمت بالتسجيل من قبل`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} مستوى ]*
