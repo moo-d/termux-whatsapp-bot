@@ -220,7 +220,7 @@ async function startsBaileysBot() {
       const mentions = (teks, memberr, id) => {
 	(id == null || id == undefined || id == false) ? MUT.sendMessage(from, teks.trim(), extendedText, {contextInfo: {"mentionedJid": memberr}}) : MUT.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": memberr}})
       }
-            const sendButMessage = (from, text1, desc1, but = [], options = {}) => {
+      const sendButMessage = (from, text1, desc1, but = [], options = {}) => {
         const buttonMessage = {
           contentText: text1,
           footerText: desc1,
@@ -320,6 +320,12 @@ async function startsBaileysBot() {
       if (time2 < "05:00:00") {
         var ucapanWaktu = txtlang.goodnight();
       }
+      const vcard = 'BEGIN:VCARD\n' // metadata of the contact card
+        + 'VERSION:3.0\n' 
+        + `FN:${setting.ownername}\n` // full name
+        + 'ORG:Owner Bot;\n' // the organization of the contact
+        + 'TEL;type=CELL;type=VOICE;waid=' + setting.ownernum + ':+' + setting.ownernum + '\n'
+        + 'END:VCARD'
       colors = ['red','white','black','blue','yellow','green']
       const isMedia = (type === 'imageMessage' || type === 'videoMessage')
       const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
@@ -844,6 +850,9 @@ async function startsBaileysBot() {
             }
           }
           MUT.sendMessage(from, been, text, { quoted: { key: { fromMe: false, participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: {"imageMessage": {"caption": "\nIG : Moo-d\nWhatsapp BOT : BAILEYS-WABOT","jpegThumbnail": owner } } } } )
+        break
+        case 'owner':
+          MUT.sendMessage(from, { displayname: "Jeff", vcard: vcard }, MessageType.contact, { quoted: mek })
         break
 	default:
         if (isGroup && isSimi && budy != undefined) {
