@@ -135,6 +135,18 @@ exports.exafakecmd = () => {
 exports.namegcchanged = () => {
   return `[SUCCESS] Renaming this group`
 }
+exports.goodnight = () => {
+  return `Good night🌃`
+}
+exports.goodafternoon = () => {
+  return `Good afternoon🌆`
+}
+exports.goodafternun = () => {
+  return `Good afternoon🌇`
+}
+exports.goodmorning = () => {
+  return `Good morning🌅`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
