@@ -154,6 +154,9 @@ exports.levelview = (sem, userXp, userLevel, pushname) => {
 • *Level* : ${userLevel}
 `
 }
+exports.hasverifyed = () => {
+  return `Kamu telah daftar sebelumnya`
+}
 exports.levelup = (sender, getLevelingXp, getLevel, getLevelingLevel) => {
   return `
 *[ LEVEL UP ]*
@@ -197,7 +200,7 @@ exports.infobot = (uptime, setting, runbrowser, mcc, mnc, browserversion, runtim
 `
 }
 exports.verify = (serialUser, namaUser, sender) => {
-return `
+  return `
 *[VERIFIKASI]*
 Serial Kode : *${serialUser}*
 • *Nama* : *${namaUser}*
