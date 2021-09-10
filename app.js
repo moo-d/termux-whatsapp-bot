@@ -11,6 +11,7 @@ const { color, bgcolor } = require('./lib/color')
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom } = require('./lib/msgf')
 const { start, info, success, close } = require('./lib/instance')
 const { fetchJson } = require('./lib/fetcher')
+const help = require('./lib/help')
 const fs = require('fs')
 const speed = require('performance-now')
 const moment = require('moment-timezone')
@@ -338,7 +339,7 @@ async function startsBaileysBot() {
       switch(command) {
 	case 'help':
         case 'menu':
-          sendButMessage(from, setting.botname, txtlang.help(prefix), [
+          sendButMessage(from, setting.botname, help(prefix), [
             {
               buttonId: `${prefix}info`,
               buttonText: {
