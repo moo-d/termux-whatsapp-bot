@@ -805,6 +805,20 @@ async function startsBaileysBot() {
           MUT.groupUpdateSubject(idgrup, `${body.slice(9)}`)
           reply(txtlang.namegcchanged())
         break
+        case 'info':
+          uptime = process.uptime()
+          runbrowser = MUT.browserDescription[1]
+          browserversion = MUT.browserDescription[2]
+          runtimebot = kyun(uptime)
+          oshp = device_manufacturer
+          osversion = os_version
+          devicemodel = device_model
+          ramdevice = process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}
+          ramdevicetotal = Math.round(require('os').totalmem / 1024 / 1024)
+          waversion = MUT.user.phone.wa_version
+          teks = txtlang.infobot(uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion)
+          reply(teks)
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
