@@ -341,6 +341,13 @@ async function startsBaileysBot() {
               type: 1,
             },
             {
+              buttonId: `${prefix}owner`,
+              buttonText: {
+                displayText: `Owner`,
+              },
+              type: 1,
+            },
+            {
               buttonId: `${prefix}author`,
               buttonText: {
                 displayText: `Author`,
@@ -819,6 +826,24 @@ async function startsBaileysBot() {
           waversion = MUT.user.phone.wa_version
           teks = txtlang.infobot(uptime, setting, runbrowser, mcc, mnc, browserversion, runtimebot, oshp, osversion, devicemodel, ramdevice, ramdevicetotal, waversion, speedbot)
           reply(teks)
+        break
+        case 'github':
+          reply('GitHub : https://github.com/moo-d/baileys-wabot')
+        break
+        case 'author':
+          moo_dnum = '628886060342@s.whatsapp.net'
+          mrfzvxnum = '6282223014661@s.whatsapp.net'
+          kysxcodenum = '62815260684977@s.whatsapp.net'
+          hadinum = '628990911211@s.whatsapp.net'
+          ppownlink = 'https://avatars.githubusercontent.com/u/75057738?v=4'
+          owner = await getBuffer(ppownlink)
+          const been = {
+            text: `Author:\n- @${moo_dnum.split("@")[0]}\n- @${mrfzvxnum.split("@")[0]}\n- @${kysxcodenum.split("@")[0]}\n- @{hadinum.split("@")[0]}`,
+            contextInfo: {
+              mentionedJid: [nomor]
+            }
+          }
+          MUT.sendMessage(from, been, text, { quoted: { key: { fromMe: false, participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: {"imageMessage": {"caption": "\nIG : Moo-d\nWhatsapp BOT : BAILEYS-WABOT","jpegThumbnail": owner } } } } )
         break
 	default:
         if (isGroup && isSimi && budy != undefined) {
