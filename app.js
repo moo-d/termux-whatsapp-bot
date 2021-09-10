@@ -166,8 +166,25 @@ async function startsBaileysBot() {
           return _scommand[position].chats;
         }
       };
-      body = (type === 'conversation' && mek.message.conversation.startsWith(prefix)) ? mek.message.conversation : (type == 'imageMessage') && mek.message.imageMessage.caption.startsWith(prefix) ? mek.message.imageMessage.caption : (type == 'videoMessage') && mek.message.videoMessage.caption.startsWith(prefix) ? mek.message.videoMessage.caption : (type == 'extendedTextMessage') && mek.message.extendedTextMessage.text.startsWith(prefix) ? mek.message.extendedTextMessage.text : ''
-      budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
+      let body = type === "conversation" && mek.message.conversation
+        ? mek.message.conversation
+        : type == "imageMessage" && mek.message.imageMessage.caption
+        ? mek.message.imageMessage.caption
+        : type == "videoMessage" && mek.message.videoMessage.caption
+        ? mek.message.videoMessage.caption
+        : type == "extendedTextMessage" && mek.message.extendedTextMessage.text
+        ? mek.message.extendedTextMessage.text
+        : type == "buttonsResponseMessage" && mek.message[type].selectedButtonId
+        ? mek.message[type].selectedButtonId
+        : type == "stickerMessage" &&
+          getCmd(mek.message[type].fileSha256.toString("base64")) !== null &&
+          getCmd(mek.message[type].fileSha256.toString("base64")) !== undefined
+        ? getCmd(mek.message[type].fileSha256.toString("base64"))
+        : "";
+        for(AOW of listprefix){
+	  if(body.startsWith(AOW)){prefix = AOW}else{}
+        }
+      let budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
       const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
       const args = body.trim().split(/ +/).slice(1)
       const isCmd = body.startsWith(prefix)
