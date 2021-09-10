@@ -152,6 +152,9 @@ async function startsBaileysBot() {
       const type = Object.keys(mek.message)[0]
       const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
       const time = moment.tz('Asia/Jakarta').format('DD/MM HH:mm:ss')
+      const jam = moment().tz("Asia/Jakarta").format("HH:mm:ss");
+      const wita = moment.tz("Asia/Makassar").format("HH:mm:ss");
+      const wit = moment.tz("Asia/Jayapura").format("HH:mm:ss");
       const getCmd = (id) => {
         let position = null;
         Object.keys(_scommand).forEach((i) => {
