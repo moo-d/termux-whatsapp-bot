@@ -847,7 +847,7 @@ async function startsBaileysBot() {
           const been = {
             text: `Author:\n- @${moo_dnum.split("@")[0]}\n- @${mrfzvxnum.split("@")[0]}\n- @${kysxcodenum.split("@")[0]}\n- @{hadinum.split("@")[0]}`,
             contextInfo: {
-              mentionedJid: [nomor]
+              mentionedJid: [moo_dnum, mrfzvxnum, kysxcodenum, hadinum]
             }
           }
           MUT.sendMessage(from, been, text, { quoted: { key: { fromMe: false, participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: {"imageMessage": {"caption": "\nIG : Moo-d\nWhatsapp BOT : BAILEYS-WABOT","jpegThumbnail": owner } } } } )
