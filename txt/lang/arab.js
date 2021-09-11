@@ -139,6 +139,18 @@ exports.goodmorning = () => {
 exports.hasverifyed = () => {
   return `لقد قمت بالتسجيل من قبل`
 }
+exports.nsfwon = () => {
+  return `[ينجح] قم بتنشيط ميزة NSFW`
+}
+exports.nsfwoff = () => {
+  return `[ينجح] قم بتعطيل ميزة NSFW`
+}
+exports.nsfwalron = () => {
+  return `ميزة NSFW نشطة بالفعل`
+}
+exports.nsfwnoton = () => {
+  return `لم يتم تنشيط ميزة NSFW في هذه المجموعة.`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} مستوى ]*
