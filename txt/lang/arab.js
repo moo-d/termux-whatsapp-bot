@@ -200,3 +200,6 @@ return `
 • *اسم* : *${namaUser}*
 • *عدد* : *${sender.split("@")[0]}*`
 }
+exports.notverify = () => {
+  return `
+}
