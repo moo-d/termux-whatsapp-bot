@@ -912,11 +912,41 @@ async function startsBaileysBot() {
           MUT.sendMessage(from, txtlang.done(), text, { quoted: mek })
         break
         case 'randomanime':
-          if (!isRegister) return reply('kamu belum terverifikasi')
-          var animelink = apilink.mycodeit + 'anime'
-          var animebuf = await getBuffer(animelink)
-          reply(txtlang.wait())
-          MUT.sendMessage(from, animebuf, image, {quoted:mek})
+        case 'anime':
+          if (!isRegister) return registuser()
+          if (isGroup) {
+            if (!isNsfw) return reply('nsfw tidak diaktifkan di grup ini')
+            var animsw = await getBuffer(apilink.mycodeit + 'anime')
+            MUT.sendMessage(from, animsw, image, {quoted: mek, caption: 'halal'})
+          } else {
+            var animsw = await getBuffer(apilink.mycodeit + 'anime')
+            MUT.sendMessage(from, animsw, image, {quoted: mek, caption: 'halal'})
+          }
+          break
+        case 'corohelp':
+          if (!isRegister) return registuser()
+          if (args.length < 1) return reply('masukan nama negara')
+          corocountry = args.join("")
+          corolink = apilink.mycodeit + 'corohelp?country=' + corocountry
+          cororslt = await fetchJson(corolink, {method: 'get'})
+          teks = `• Confirmed : ${cororslt.result.terkonfirmasi}\n• Death : ${cororslt.result.meniggal}\n• Healed : ${cororslt.result.sembuh>
+          reply(teks)
+        break
+        case 'nsfw':
+          if (!isGroupAdmins) return reply(mess.only.admin)
+          if (args.length < 1) return reply(txtlang.enaordisa())
+          if (args[0] == 'enable') {
+            if (isNsfw) return reply('nsfw telah diaktifkan sebelumnya')
+            nsfwjson.push(from)
+            fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfwjson))
+            reply('Sukses mengaktifkan mode nsfw di group ini ✔️')
+          } else if (args[0] == 'disable') {
+            nsfwjson.splice(from)
+            fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfwjson))
+            reply('Sukes menonaktifkan mode nsfw di group ini ✔️')
+          } else {
+            reply(txtlang.enaordisa())
+          }
         break
 	default:
         if (isGroup && isSimi && budy != undefined) {
