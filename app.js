@@ -211,14 +211,6 @@ async function startsBaileysBot() {
       if (authorname != undefined) { } else { authorname = groupName }
       pushname = MUT.contacts[sender] != undefined ? MUT.contacts[sender].vname || MUT.contacts[sender].notify : undefined
       const isRegister = checkRegisteredUser(sender)
-      const registuser = () => {
-        sendButMessage(from, setting.botname, `Kamu belum terverifikasi.\n\nVerify sekarang yuk!`, [
-          {
-            buttonId: `${prefix}verify`,                                                                                          buttonText: {
-              displayText: `Verify Sekarang`,
-            },                                                                                                                    type: 1,
-          },
-        ], {quoted:mek}))
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
@@ -298,6 +290,17 @@ async function startsBaileysBot() {
           options
         );
       };
+      const registuser = () => {
+        sendButMessage(from, setting.botname, txtlang.notverify(), [
+          {
+            buttonId: `${prefix}verify`,
+            buttonText: {
+              displayText: verifynowbut(),
+            },
+          type: 1,
+          },
+        ], {quoted:mek})
+      }
       let d = new Date();
       let locale = "id";
       let gmt = new Date(0).getTime() - new Date("1 January 1970").getTime();
@@ -349,7 +352,7 @@ async function startsBaileysBot() {
       switch(command) {
 	case 'help':
         case 'menu':
-          if (!isRegister) return registuser
+          if (!isRegister) return registuser()
           thumbmn = fs.readFileSync('./media/photo/mn.jpg')
           sendButLok(from, setting.botname, help(prefix), thumbmn, [
             {
