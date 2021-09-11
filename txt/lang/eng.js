@@ -140,6 +140,18 @@ exports.goodmorning = () => {
 exports.hasverifyed = () => {
   return `You have registered before`
 }
+exports.nsfwon = () => {
+  return `[SUCCESS] Enable NSFW feature`
+}
+exports.nsfwoff = () => {
+  return `[SUCCESS] Disable NSFW feature`
+}
+exports.nsfwalron = () => {
+  return `NSFW has been active before`
+}
+exports.nsfwnotact = () => {
+  return `The NSFW feature has not been activated in this group.`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
