@@ -1,12 +1,12 @@
 # Baileys Wabot
-
 <p style="text-align:center">
   <img src="./.github/rm/20210821_110622.jpg">
 </p>
 
 # How to Install
 
-## How to install in Termux
+<details>
+<summary>How to install in Termux</summary>
 
 ### Cloning
 Type command :
@@ -32,7 +32,10 @@ Type command :
 > npm start
 ```
 
-## Ubuntu
+</details>
+
+<details>
+<summary>How to install in Ubuntu</summary>
 Type command :
 
 ```sh
@@ -67,9 +70,10 @@ Type command :
 > npm start
 ```
 
-## Windows
+</details>
 
-### Installing Package
+<details>
+<summary>How to install in Windows</summary>
 
 #### Installing Git
 - Download the file [here](https://git-scm.com/download/win)
@@ -119,5 +123,109 @@ It will give us a callback like `SUCCESS: specified value was saved`.
 ```
 It will give us a callback like `SUCCESS: specified value was saved`.
 
+</details>
+
+# Editing File 📝
+
+## Editing [setting.json](https://github.com/moo-d/baileys-wabot/blob/main/lib/setting.json)
+```json
+{
+  "prefix":".",
+  "ownernum": "62888xxx",
+  "removebgApiKey": "Your-ApiKey",
+  "botname": "BAILEYS-WABOT",
+  "ownername": "moo-d",
+  "pttmode": "false"
+}
+```
+
+- `prefix`: if you wan't to change prefix, you can change it as you want Example: `"prefix": "#"`.
+- `ownernum`: your WhatsApp number.
+- `removebgApiKey`: RemoveBg ApiKey. You have to login/signup first [here](https://www.remove.bg/upload). Then you can get it [here](https://www.remove.bg/api)
+- `botname`: your bot name
+- `ownername`: your name
+- `pttmode`: If you want use `pttmode`,change it to `true`
+
+## Editing Language Bot
+If you want to change the language to English or Arabic, replace `const txtlang = ind` to `eng` or `arab`.
+
+Example:
+
+```js
+const txtlang = ind
+```
+
+To:
+```js
+const txtlang = eng
+```
+
+# How To Run Bot 24 Hours 🕓
+You can run bot 24 hours with website [Replit](replit.com)
+
+Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/README.md) for How to activating Replit Keep Alive & other.
+
+# Features
+
+|      Sticker     | Yes |
+|:----------------:|:---:|
+| Sticker Maker    | ✔️  |
+| Sticker To Image | ✔️  |
+
+| News/Information | Yes |
+|:----------------:|:---:|
+| Covid-19 Help    | ✔️  |
+
+|   Fun       | Yes |
+|:-----------:|:---:|
+| Meme (Indo) | ✔️  |
+
+|     Anime/Manga     | Yes |
+|:-------------------:|:---:|
+| Random Anime (NSFW) | ✔️  |
+
+|           Group           | Yes |
+|:-------------------------:|:---:|
+| See List Admin Group      | ✔️  |
+| Get Invitation Link Group | ✔️  |
+| Reply Fake Message        | ✔️  |
+
+|         Admin Group              | Yes |
+|:--------------------------------:|:---:|
+| Promote Members                  | ✔️  |
+| Demote Members                   | ✔️  |
+| Add Members                      | ✔️  |
+| Kick Members                     | ✔️  |
+| Say Welcome to new members       | ✔️  |
+| Private Group Info               | ✔️  |
+| Ordering Bots to leave the group | ✔️  |
+| Close Group                      | ✔️  |
+| Open Group                       | ✔️  |
+| Delete Bot Message               | ✔️  |
+| Change Name Group                | ✔️  |
+| Change Description Group         | ✔️  |
+| Set Permission Nsfw on Group     | ✔️  |
+
+|             Owner           | Yes |
+|:---------------------------:|:---:|
+| Change Bot Prefix           | ✔️  |
+| Change Photo Profile Bot    | ✔️  |
+| Broadcast                   | ✔️  |
+| Group Broadcast             | ✔️  |
+| Change MSG Mode to Ptt Mode | ✔️  |
+
+|    No Category   | Yes |
+|:----------------:|:---:|
+| WA-ME Link       | ✔️  |
+| Check Block List | ✔️  |
+| Video To MP 3    | ✔️  |
+
+</details>
+
+# Social Media 📱
+
 ## Group
 * <a href="https://chat.whatsapp.com/Kr17kaCJQZQ0oiaU1q240y"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+
+# Thanks To:
+- [@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys)
