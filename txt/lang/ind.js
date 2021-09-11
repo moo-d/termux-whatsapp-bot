@@ -142,6 +142,9 @@ exports.nsfwon = () => {
 exports.nsfwoff = () => {
   return `[BERHASIL] Menonaktifkan fitur NSFW`
 }
+exports.nsfwalron = () => {
+  return `NSFW telah aktif sebelumnya`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
