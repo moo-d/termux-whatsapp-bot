@@ -379,6 +379,7 @@ async function startsBaileysBot() {
           ], {quoted: mek});
         break
         case 'meme':
+          if (!isRegister) return registuser()
           reply(txtlang.wait())
           try {
             memeilink = await fetchJson(apilink.mycodeit + `darkjokes`, { method: 'get'})
@@ -428,6 +429,7 @@ async function startsBaileysBot() {
 	break
         case 'wa.me':
 	case 'wame':
+          if (!isRegister) return registuser()
           try {
             ppimg = await MUT.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
           } catch {
@@ -643,6 +645,7 @@ async function startsBaileysBot() {
         break
         case 'stiker':
         case 'sticker':
+          if (!isRegister) return registuser()
           if ((isMedia && !mek.message.videoMessage || isQuotedImage) && args.length == 0) {
             const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo : mek
             const media = await MUT.downloadAndSaveMediaMessage(encmedia)
@@ -725,6 +728,7 @@ async function startsBaileysBot() {
           }
         break
         case 'toimg':
+          if (!isRegister) return registuser()
           if (!isQuotedSticker) return reply(txtlang.needtagstickcpt())
           reply(txtlang.wait())
           var encmedia_ = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -739,6 +743,7 @@ async function startsBaileysBot() {
           })
         break
         case 'tomp3':
+          if (!isRegister) return registuser()
           if (!isQuotedVideo) return reply(txtlang.needtagvidcpt())
           reply(txtlang.wait())
           encmedia = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -803,6 +808,7 @@ async function startsBaileysBot() {
         break
         case 'fitnah':
         case 'fake':
+          if (!isRegister) return registuser()
           if (args.length < 1) return reply(txtlang.exafakecmd())
           var gh = body.slice(7)
           mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
