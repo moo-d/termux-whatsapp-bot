@@ -32,6 +32,7 @@ const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
 const _scommand = JSON.parse(fs.readFileSync("./src/scommand.json"));
+const packagejson = JSON.parse(fs.readFileSync('./package.json'))
 
 pttmode = setting.pttmode
 prefix = setting.prefix
