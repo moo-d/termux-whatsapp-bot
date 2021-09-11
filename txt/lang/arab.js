@@ -14,13 +14,15 @@ exports.hello = () => {
   return `أهلا`
 }
 exports.welcome = () => {
-  return `مرحبا بك في`
+  return `مرحبا بك في
+`
 }
 exports.goodbye = () => {
   return `مع السلامة`
 }
 exports.done = () => {
-  return `منتهي`
+  return `منتهي
+  `
 }
 exports.onlygroup = () => {
   return `[ ! ] لا يمكن استخدام هذا الأمر إلا في مجموعات.`
@@ -203,7 +205,7 @@ return `
 exports.notverify = () => {
   return `انت لم توثق
 
-وثق نفسك الان
+وثق نفسك الان`
 }
 exports.verifynowbut = () => {
   return `وثق نفسك الان`

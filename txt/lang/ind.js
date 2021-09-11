@@ -145,7 +145,7 @@ exports.nsfwoff = () => {
 exports.nsfwalron = () => {
   return `NSFW telah aktif sebelumnya`
 }
-expires.nsfwnoton = () => {
+exports.nsfwnoton = () => {
   return `Fitur NSFW belum diaktifkan di group ini.`
 }
 exports.levelview = (sem, userXp, userLevel, pushname) => {
