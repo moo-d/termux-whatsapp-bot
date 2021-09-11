@@ -216,3 +216,7 @@ You haven't verified.
 Verify now!
 `
 }
+
+exports.verifynowbut = () => {
+  return `Verify Now`
+}
