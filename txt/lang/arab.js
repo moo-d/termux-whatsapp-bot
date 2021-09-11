@@ -205,3 +205,6 @@ exports.notverify = () => {
 
 وثق نفسك الان
 }
+exports.verifynowbut = () => {
+  return `وثق نفسك الان`
+}
