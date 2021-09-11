@@ -28,7 +28,6 @@ const { getRegisteredRandomId, addRegisteredUser, createSerial, checkRegisteredU
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
 const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
-//const user = JSON.parse(fs.readFileSync('./src/user.json'))
 const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
@@ -211,6 +210,15 @@ async function startsBaileysBot() {
       let authorname = MUT.contacts[from] != undefined ? MUT.contacts[from].vname || MUT.contacts[from].notify : undefined
       if (authorname != undefined) { } else { authorname = groupName }
       pushname = MUT.contacts[sender] != undefined ? MUT.contacts[sender].vname || MUT.contacts[sender].notify : undefined
+      const isRegister = checkRegisteredUser(sender)
+      const registuser = () => {
+        sendButMessage(from, setting.botname, `Kamu belum terverifikasi.\n\nVerify sekarang yuk!`, [
+          {
+            buttonId: `${prefix}verify`,                                                                                          buttonText: {
+              displayText: `Verify Sekarang`,
+            },                                                                                                                    type: 1,
+          },
+        ], {quoted:mek}))
       const isUrl = (url) => {
         return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'))
       }
@@ -341,6 +349,7 @@ async function startsBaileysBot() {
       switch(command) {
 	case 'help':
         case 'menu':
+          if (!isRegister) return registuser
           thumbmn = fs.readFileSync('./media/photo/mn.jpg')
           sendButLok(from, setting.botname, help(prefix), thumbmn, [
             {
