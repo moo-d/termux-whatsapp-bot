@@ -208,3 +208,10 @@ Serial Kode : *${serialUser}*
 • *Nama* : *${namaUser}*
 • *Nomor* : *${sender.split("@")[0]}*`
 }
+exports.notverify = () => {
+  return `
+Kamu belum terverifikasi.
+
+Verify sekarang yuk!
+`
+}
