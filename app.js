@@ -355,8 +355,8 @@ async function startsBaileysBot() {
 	case 'help':
         case 'menu':
           if (!isRegister) return registuser()
-          thumbmn = fs.readFileSync('./media/photo/mn.jpg')
-          sendButLok(from, setting.botname, help(prefix, packagejson), thumbmn, [
+          //thumbmn = fs.readFileSync('./media/photo/mn.jpg')
+          sendButMessage(from, setting.botname, help(prefix, packagejson), [
             {
               buttonId: `${prefix}info`,
               buttonText: {
