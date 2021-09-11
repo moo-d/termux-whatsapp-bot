@@ -209,3 +209,10 @@ Serial Code : *${serialUser}*
 • *Name* : *${namaUser}*
 • *Number* : *${sender.split("@")[0]}*`
 }
+exports.notverify = () => {
+  return `
+You haven't verified.
+
+Verify now!
+`
+}
