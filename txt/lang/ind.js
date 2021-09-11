@@ -136,6 +136,12 @@ exports.goodafternun = () => {
 exports.goodmorning = () => {
   return `Selamat pagi🌅`
 }
+exports.nsfwon = () => {
+  return `[BERHASIL] Mengaktifkan fitur NSFW`
+}
+exports.nsfwoff = () => {
+  return `[BERHASIL] Menonaktifkan fitur NSFW`
+}
 exports.levelview = (sem, userXp, userLevel, pushname) => {
   return `
 *[ ${pushname} LEVEL ]*
