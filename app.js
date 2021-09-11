@@ -184,7 +184,7 @@ async function startsBaileysBot() {
         ? getCmd(mek.message[type].fileSha256.toString("base64"))
         : "";
         for(AOW of prefix){
-	  if(body.startsWith(AOW)){prefix = AOW}else{}
+          if(body.startsWith(AOW)){prefix = AOW}else{}
         }
       let budy = (type === 'conversation') ? mek.message.conversation : (type === 'extendedTextMessage') ? mek.message.extendedTextMessage.text : ''
       const command = body.slice(1).trim().split(/ +/).shift().toLowerCase()
