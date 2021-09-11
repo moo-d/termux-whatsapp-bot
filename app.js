@@ -915,7 +915,7 @@ async function startsBaileysBot() {
         case 'anime':
           if (!isRegister) return registuser()
           if (isGroup) {
-            if (!isNsfw) return reply('nsfw tidak diaktifkan di grup ini')
+            if (!isNsfw) return reply(txtlang.nsfwnotact())
             var animsw = await getBuffer(apilink.mycodeit + 'anime')
             MUT.sendMessage(from, animsw, image, {quoted: mek, caption: 'halal'})
           } else {
@@ -936,14 +936,14 @@ async function startsBaileysBot() {
           if (!isGroupAdmins) return reply(mess.only.admin)
           if (args.length < 1) return reply(txtlang.enaordisa())
           if (args[0] == 'enable') {
-            if (isNsfw) return reply('nsfw telah diaktifkan sebelumnya')
+            if (isNsfw) return reply(txtlang.nsfwalron())
             nsfwjson.push(from)
             fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfwjson))
-            reply('Sukses mengaktifkan mode nsfw di group ini ✔️')
+            reply(txtlang.nsfwon())
           } else if (args[0] == 'disable') {
             nsfwjson.splice(from)
             fs.writeFileSync('./src/nsfw.json', JSON.stringify(nsfwjson))
-            reply('Sukes menonaktifkan mode nsfw di group ini ✔️')
+            reply(txtlang.nsfwoff())
           } else {
             reply(txtlang.enaordisa())
           }
