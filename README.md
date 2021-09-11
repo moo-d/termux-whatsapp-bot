@@ -224,8 +224,11 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 
 # Social Media 📱
 
+## Discord
+- Coming soon
+
 ## Group
 * <a href="https://chat.whatsapp.com/Kr17kaCJQZQ0oiaU1q240y"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
 
 # Thanks To:
-- [@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys)
+- `[@adiwajshing/Baileys](https://github.com/adiwajshing/Baileys)`
