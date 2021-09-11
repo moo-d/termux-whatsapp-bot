@@ -860,7 +860,7 @@ async function startsBaileysBot() {
           hadinum = '628990911211@s.whatsapp.net'
           owner = fs.readFileSync('./.github/rm/20210821_110622.jpg')
           const been = {
-            text: `Author:\n- @${moo_dnum.split("@")[0]}\n- @${mrfzvxnum.split("@")[0]}\n- @${kysxcodenum.split("@")[0]}\n- @{hadinum.split("@")[0]}`,
+            text: `Author:\n- @${moo_dnum.split("@")[0]}\n- @${mrfzvxnum.split("@")[0]}\n- @${kysxcodenum.split("@")[0]}\n- @${hadinum.split("@")[0]}`,
             contextInfo: {
               mentionedJid: [moo_dnum, mrfzvxnum, kysxcodenum, hadinum]
             }
