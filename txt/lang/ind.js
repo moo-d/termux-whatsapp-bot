@@ -215,3 +215,6 @@ Kamu belum terverifikasi.
 Verify sekarang yuk!
 `
 }
+exports.verifynowbut = () => {
+  return `Verifikasi Sekarang`
+}
