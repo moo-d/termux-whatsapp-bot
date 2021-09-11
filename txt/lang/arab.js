@@ -201,5 +201,7 @@ return `
 • *عدد* : *${sender.split("@")[0]}*`
 }
 exports.notverify = () => {
-  return `
+  return `انت لم توثق
+
+وثق نفسك الان
 }
