@@ -37,6 +37,7 @@ const packagejson = JSON.parse(fs.readFileSync('./package.json'))
 pttmode = setting.pttmode
 prefix = setting.prefix
 blocked = []
+banChats = false
 
 function kyun(seconds){
   function pad(s){
@@ -352,8 +353,25 @@ async function startsBaileysBot() {
       if (!isGroup && !isCmd) console.log('[RECV]', time, 'Message', 'from', sender.split('@')[0], 'args :', args.length)
       if (isCmd && isGroup) console.log('[MUT]', time, command, 'from', sender.split('@')[0], 'in', groupName, 'args :', args.length)
       if (!isCmd && isGroup) console.log('[RECV]', time, 'Message', 'from', sender.split('@')[0], 'in', groupName, 'args :', args.length)
+      
+      if (!isOwner && banChats && isCmd === true) return
       switch(command) {
-	case 'help':
+
+      case "public":
+        if(!isOwner) return ('Fitur ini khusus owner')
+        if (banChats === false)  return;
+        banChats = false;
+        reply(`Mode Publik diaktifkan`);
+        break
+
+      case "private":
+        if(!isOwner) return ('Fitur ini khusus owner')
+        if (banChats === true) return;
+        banChats = true;
+        reply(`Mode Private diaktifkan`);
+        break;
+
+      case 'help':
         case 'menu':
           if (!isRegister) return registuser()
           //thumbmn = fs.readFileSync('./media/photo/mn.jpg')
