@@ -214,11 +214,12 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 | Group Broadcast             | ✔️  |
 | Change MSG Mode to Ptt Mode | ✔️  |
 
-|    No Category   | Yes |
-|:----------------:|:---:|
-| WA-ME Link       | ✔️  |
-| Check Block List | ✔️  |
-| Video To MP 3    | ✔️  |
+|          No Category         | Yes |
+|:-----------------------------:|:---:|
+| WA-ME Link                    | ✔️  |
+| Check Block List              | ✔️  |
+| Video To MP 3                 | ✔️  |
+| Set Command to Private/Public | ✔️  |
 
 </details>
 
