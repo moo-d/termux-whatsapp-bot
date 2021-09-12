@@ -342,6 +342,7 @@ async function startsBaileysBot() {
         + 'ORG:Owner Bot;\n' // the organization of the contact
         + 'TEL;type=CELL;type=VOICE;waid=' + setting.ownernum + ':+' + setting.ownernum + '\n'
         + 'END:VCARD'
+      const { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = MUT.user.phone
       colors = ['red','white','black','blue','yellow','green']
       const isMedia = (type === 'imageMessage' || type === 'videoMessage')
       const isQuotedImage = type === 'extendedTextMessage' && content.includes('imageMessage')
