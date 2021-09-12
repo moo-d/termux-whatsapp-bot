@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://replit.com"><img src="./img/replitlogo.png" width="120">
+</p>
+
 # Replit Keep Alive
 
 #### How to activating Replit Keep Alive
