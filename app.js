@@ -954,22 +954,16 @@ async function startsBaileysBot() {
             reply(txtlang.enaordisa())
           }
         break
-        
-        case "public":
-        if(!isOwner) return ('Fitur ini khusus owner')
-        if (banChats === false)  return;
-        banChats = false;
-        reply(`Mode Publik diaktifkan`);
+        case "setcmd":
+          if(!isOwner) return (txtlang.onlyowner())
+          if (args[0] == 'false') {
+            banChats = false;
+            reply(txtlang.setpublic());
+          } else if (args[0] == 'true') {
+            banChats = true;
+            reply(txtlang.setprivate());
+          }
         break
-
-        case "private":
-        if(!isOwner) return ('Fitur ini khusus owner')
-        if (banChats === true) return;
-        banChats = true;
-        reply(`Mode Private diaktifkan`);
-        break;
-
-
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
