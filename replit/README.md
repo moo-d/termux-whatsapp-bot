@@ -31,7 +31,7 @@ const replit_keep = require(./replit/keep_alive)
 ### How to Start bot in Replit
 Run command:
 ```cmd
-> npm start
+> npm i
 > node .
 ```
 
