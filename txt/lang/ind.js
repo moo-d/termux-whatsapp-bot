@@ -218,3 +218,9 @@ Verify sekarang yuk!
 exports.verifynowbut = () => {
   return `Verifikasi Sekarang`
 }
+exports.setpublic = () => {
+  return `Command telah diubah menjadi Publik`
+}
+exports.setprivate = () => {
+  return `Command telah diubah menjadi Private. Sekarang hanya owner yang bisa menggunakan command.`
+}
