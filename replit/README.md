@@ -4,14 +4,36 @@
 
 # Replit Keep Alive
 
-#### How to activating Replit Keep Alive
-
+## How to Upload This Repo to Replit
 - Open [Replit Website](replit.com).
-- Edit app.js and add:
+- Login/Sign Up First.
+- Then Open `Repls` Menu, If you can't find Repls menu you can use [this link](replit.com/repls).
+- Click `+ New Repl`
+- Click `Import from github`
+- enter the link `github.com/moo-d/baileys-wabot`
+- after that click `import from github`
+
+Now this Repo has been uploaded.
+
+## How to activating Replit Keep Alive
+
+### This is for Handphone if you using Windows/Linux/Ubuntu You can skip this to Activating Keep Alive!
+- Open `code` menu
+- click the file menu in the upper right corner
+
+### Activating Keep Alive
+- Open `app.js` or `index.js` file
+- Add this code:
 ```js
-let replit_keep =  require('./replit/keep_alive')
+const replit_keep = require(./replit/keep_alive)
 ```
-- Run your bot
+
+### How to Start bot in Replit
+Run command:
+```cmd
+> npm start
+> node .
+```
 
 # Warn!
 
@@ -20,4 +42,3 @@ On [Replit Website](replit.com), your code Will not safe, because there is no pr
 ### consequence
 
 your code will be editable by everyone in [Replit](replit.com).
-
