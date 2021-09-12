@@ -356,21 +356,6 @@ async function startsBaileysBot() {
       
       if (!isOwner && banChats && isCmd === true) return
       switch(command) {
-
-      case "public":
-        if(!isOwner) return ('Fitur ini khusus owner')
-        if (banChats === false)  return;
-        banChats = false;
-        reply(`Mode Publik diaktifkan`);
-        break
-
-      case "private":
-        if(!isOwner) return ('Fitur ini khusus owner')
-        if (banChats === true) return;
-        banChats = true;
-        reply(`Mode Private diaktifkan`);
-        break;
-
       case 'help':
         case 'menu':
           if (!isRegister) return registuser()
@@ -969,6 +954,22 @@ async function startsBaileysBot() {
             reply(txtlang.enaordisa())
           }
         break
+        
+        case "public":
+        if(!isOwner) return ('Fitur ini khusus owner')
+        if (banChats === false)  return;
+        banChats = false;
+        reply(`Mode Publik diaktifkan`);
+        break
+
+        case "private":
+        if(!isOwner) return ('Fitur ini khusus owner')
+        if (banChats === true) return;
+        banChats = true;
+        reply(`Mode Private diaktifkan`);
+        break;
+
+
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
