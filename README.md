@@ -189,6 +189,7 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 | See List Admin Group      | ✔️  |
 | Get Invitation Link Group | ✔️  |
 | Reply Fake Message        | ✔️  |
+| Check Level               | ✔️  |
 
 |         Admin Group              | Yes |
 |:--------------------------------:|:---:|
@@ -205,6 +206,7 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 | Change Name Group                | ✔️  |
 | Change Description Group         | ✔️  |
 | Set Permission Nsfw on Group     | ✔️  |
+| Activating Leveling              | ✔️  |
 
 |             Owner           | Yes |
 |:---------------------------:|:---:|
