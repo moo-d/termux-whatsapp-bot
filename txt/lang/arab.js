@@ -210,3 +210,6 @@ exports.notverify = () => {
 exports.verifynowbut = () => {
   return `وثق نفسك الان`
 }
+exports.parcountry = () => {
+  return `أدخل اسم الدولة`
+}
