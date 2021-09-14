@@ -24,6 +24,7 @@ const setting = JSON.parse(fs.readFileSync('./lib/setting.json'))
 const apilink = JSON.parse(fs.readFileSync('./lib/apilink.json'))
 const { eng, ind, arab } = require('./txt/lang/')
 const txtlang = ind
+const brainly = require('brainly-scraper')
 const { getRegisteredRandomId, addRegisteredUser, createSerial, checkRegisteredUser } = require('./lib/function/verif')
 const welcomejson = JSON.parse(fs.readFileSync('./src/welcome.json'))
 const nsfwjson = JSON.parse(fs.readFileSync('./src/nsfw.json'))
