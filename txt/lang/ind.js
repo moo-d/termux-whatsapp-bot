@@ -227,3 +227,10 @@ exports.setprivate = () => {
 exports.parcountry = () => {
   return `Masukan nama negara`
 }
+exports.brainlyview = (br_quest, br_answer) => {
+  return `
+*[BRAINLY]*
+
+• *Pertanyaan* : ${br_quest}
+• *Jawaban* : ${br_answer}\n\n`
+}
