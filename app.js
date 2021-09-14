@@ -6,7 +6,7 @@ const {
   GroupSettingChange,
   MessageOptions
 } = require('@adiwajshing/baileys')
-const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel } = require('./lib/function/leveling')
+const { getLevelingXp, getLevelingLevel, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId } = require('./lib/function/leveling')
 const { color, bgcolor } = require('./lib/color')
 const { simih, getBuffer, h2k, generateMessageID, getGroupAdmins, getRandom } = require('./lib/msgf')
 const { start, info, success, close } = require('./lib/instance')
@@ -922,7 +922,7 @@ async function startsBaileysBot() {
         case 'anime':
           if (!isRegister) return registuser()
           if (isGroup) {
-            if (!isNsfw) return reply(txtlang.nsfwnotact())
+            if (!isNsfw) return reply(txtlang.nsfwnoton())
             var animsw = await getBuffer(apilink.mycodeit + 'anime')
             MUT.sendMessage(from, animsw, image, {quoted: mek, caption: 'halal'})
           } else {
