@@ -931,7 +931,7 @@ async function startsBaileysBot() {
           break
         case 'corohelp':
           if (!isRegister) return registuser()
-          if (args.length < 1) return reply('masukan nama negara')
+          if (args.length < 1) return reply(txtlang.parcountry())
           corocountry = args.join("")
           corolink = apilink.mycodeit + 'corohelp?country=' + corocountry
           cororslt = await fetchJson(corolink, {method: 'get'})                                                                                                                                                                    
@@ -939,7 +939,7 @@ async function startsBaileysBot() {
           reply(teks)
         break
         case 'nsfw':
-          if (!isGroupAdmins) return reply(mess.only.admin)
+          if (!isGroupAdmins) return reply(txtlang.onlyadmin())
           if (args.length < 1) return reply(txtlang.enaordisa())
           if (args[0] == 'enable') {
             if (isNsfw) return reply(txtlang.nsfwalron())
