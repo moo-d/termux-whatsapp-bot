@@ -224,3 +224,6 @@ exports.setpublic = () => {
 exports.setprivate = () => {
   return `Command telah diubah menjadi Private. Sekarang hanya owner yang bisa menggunakan command.`
 }
+exports.parcountry = () => {
+  return `Masukan nama negara`
+}
