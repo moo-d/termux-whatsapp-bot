@@ -213,3 +213,10 @@ exports.verifynowbut = () => {
 exports.parcountry = () => {
   return `أدخل اسم الدولة`
 }
+exports.brainlyview = (br_quest, br_answer) => {
+  return `
+*[BRAINLY]*
+
+*سؤال*: ${br_quest}
+*إجابه* ${br_answer}\n\n`
+}
