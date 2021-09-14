@@ -18,6 +18,7 @@
     "whatsapp",
     "js-whatsapp",
     "baileys-wabot",
+    "termux-wabot",
     "wabot"
   ],
   "homepage": "https://github.com/moo-d/baileys-wabot",
