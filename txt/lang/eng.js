@@ -220,3 +220,6 @@ Verify now!
 exports.verifynowbut = () => {
   return `Verify Now`
 }
+exports.parcountry = () => {
+  return `Enter country name`
+}
