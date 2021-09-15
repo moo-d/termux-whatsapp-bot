@@ -234,3 +234,6 @@ exports.brainlyview = (br_quest, br_answer) => {
 • *Pertanyaan* : ${br_quest}
 • *Jawaban* : ${br_answer}\n\n`
 }
+exports.needquest = () => {
+  return `Apa pertanyaannya?`
+}
