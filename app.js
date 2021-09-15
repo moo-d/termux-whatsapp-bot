@@ -984,7 +984,7 @@ async function startsBaileysBot() {
         break
         case "brainly":
           if(!isRegister) return registuser()
-          if (args.length < 1) return reply(txtlang.needquest);
+          if (args.length < 1) return reply(txtlang.needquest());
           brien = args.join(" ");
           brainly(`${brien}`).then((res) => {
             teks = ""
