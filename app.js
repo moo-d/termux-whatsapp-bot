@@ -982,6 +982,23 @@ async function startsBaileysBot() {
             reply(txtlang.setprivate());
           }
         break
+        case "brainly":
+          if(!isRegister) return registuser()
+          if (args.length < 1) return reply(txtlang.needquest);
+          brien = args.join(" ");
+          brainly(`${brien}`).then((res) => {
+            teks = ""
+            for (let Y of res.data) {
+              br_quest = Y.pertanyaan
+              br_answer = Y.jawaban[0].text
+              teks += txtlang.brainlyview(br_quest, br_answer)
+            }
+            MUT.sendMessage(from, teks, text, {
+              quoted: mek,
+              detectLinks: false,
+            });
+          });
+        break
 	default:
         if (isGroup && isSimi && budy != undefined) {
 	  console.log(budy)
