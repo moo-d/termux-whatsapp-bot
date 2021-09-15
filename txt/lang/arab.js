@@ -220,3 +220,6 @@ exports.brainlyview = (br_quest, br_answer) => {
 *سؤال*: ${br_quest}
 *إجابه* ${br_answer}\n\n`
 }
+exports.needquest = () => {
+  return `ما هو السؤال`
+}
