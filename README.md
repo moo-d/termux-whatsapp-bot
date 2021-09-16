@@ -180,6 +180,10 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 |:-----------:|:---:|
 | Meme (Indo) | ✔️  |
 
+| Education | Yes |
+|:---------:|:---:|
+| Brainly   | ✔️  |
+
 |     Anime/Manga     | Yes |
 |:-------------------:|:---:|
 | Random Anime (NSFW) | ✔️  |
