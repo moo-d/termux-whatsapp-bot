@@ -4,5 +4,6 @@
   "removebgApiKey": "Your-ApiKey",
   "botname": "BAILEYS-WABOT",
   "ownername": "moo-d",
-  "pttmode": "false"
+  "pttmode": "false",
+  "groupminim": 5
 }
