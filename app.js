@@ -35,6 +35,8 @@ const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
 const _scommand = JSON.parse(fs.readFileSync("./src/scommand.json"));
 const packagejson = JSON.parse(fs.readFileSync('./package.json'))
 
+groupminact = setting.groupminim
+groupmemlimit = setting.grouplimit
 pttmode = setting.pttmode
 prefix = setting.prefix
 blocked = []
@@ -360,6 +362,19 @@ async function startsBaileysBot() {
         } catch (err) {
           console.error(err)
         }
+      }
+      if (isGroup) {
+        if (groupminact === 'true')
+	try {
+          const getmemberlength = groupMembers.length
+          if (getmemberlength <= groupmemlimit) {
+	  reply(`maaf member group belum memenuhi syarat. minimal member group adalah ${memberlimit}`)
+	  setTimeout( () => {
+ 	    MUT.groupLeave(from) 
+ 	  }, 5000)
+ 	} catch(e) {
+ 	  console.log('Error: ' + e)
+ 	}
       }
       const { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = MUT.user.phone
       colors = ['red','white','black','blue','yellow','green']
