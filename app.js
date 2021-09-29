@@ -32,7 +32,7 @@ const simijson = JSON.parse(fs.readFileSync('./src/simi.json'))
 const _leveling = JSON.parse(fs.readFileSync('./src/leveling.json'))
 const _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const privategc_ = JSON.parse(fs.readFileSync('./src/privategc.json'))
-const _scommand = JSON.parse(fs.readFileSync("./src/scommand.json"));
+const _scommand = JSON.parse(fs.readFileSync("./src/scommand.json"))
 const packagejson = JSON.parse(fs.readFileSync('./package.json'))
 
 groupminact = setting.groupminim
@@ -41,6 +41,8 @@ pttmode = setting.pttmode
 prefix = setting.prefix
 blocked = []
 banChats = false
+roomttt = []
+defttt = ["0️⃣","1️⃣","2️⃣","3️⃣","4️⃣","5️⃣","6️⃣","7️⃣","8️⃣","9️⃣"]
 
 function kyun(seconds){
   function pad(s){
