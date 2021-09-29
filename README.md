@@ -160,11 +160,11 @@ To:
 const txtlang = eng
 ```
 
-# How To Run Bot 24 Hours 🕓
+<!--# How To Run Bot 24 Hours 🕓
 You can run bot 24 hours with website [Replit](replit.com)
 
 Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/README.md) for How to activating Replit Keep Alive & other.
-
+-->
 # Features
 
 |      Sticker     | Yes |
