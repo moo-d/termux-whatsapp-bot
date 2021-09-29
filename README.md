@@ -194,6 +194,7 @@ Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/
 | Get Invitation Link Group | ✔️  |
 | Reply Fake Message        | ✔️  |
 | Check Level               | ✔️  |
+| TicTacToe                 | Testing |
 
 |         Admin Group              | Yes |
 |:--------------------------------:|:---:|
