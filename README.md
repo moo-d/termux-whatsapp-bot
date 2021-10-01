@@ -1,242 +1,244 @@
-# Baileys Wabot
-<p style="text-align:center">
-  <img src="./.github/rm/20210821_110622.jpg">
+
+
+
+<p align="center">
+<a href="https://github.com/mrfzvx12"><img title="mrfzvx12" src="https://img.shields.io/badge/github-Mrfzvx12-orange.svg?style=social&logo=github"></a>
+</p>
+<p align="center">
+<img src="https://gpvc.arturio.dev/mrfzvx12" />
+<a href="https://github.com/mrfzvx12"><img title="Author" src="https://img.shields.io/badge/Termux Whatsapp Bot-V4-orange?style=for-the-badge&logo=github"></a>
+<p/>
+<p align="center">
+<a href="https://github.com/mrfzvx12/followers"><img title="Followers" src="https://img.shields.io/github/followers/mrfzvx12?label=Followers&style=social"></a>
+<a href="https://github.com/mrfzvx12/lexa-v4/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/mrfzvx12/lexa-v4?&style=social"></a>
+<a href="https://github.com/mrfzvx12/lexa-v4/network/members"><img title="Fork" src="https://img.shields.io/github/forks/mrfzvx12/lexa-v4?style=social"></a>
+<a href="https://github.com/mrfzvx12/lexa-v4/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/mrfzvx12/lexa-v4?label=Watching&style=social"></a>
+<a href="https://github.com/mrfzvx12/lexa-v4/watchers"><img title="Contributor" src="https://img.shields.io/github/contributors/mrfzvx12/lexa-v4?logo=github&style=social"></a>
+</p>
+<p align="center">
+<a href="https://github.com/mrfzvx12/lexa-v4"><img src="https://img.shields.io/github/repo-size/mrfzvx12/lexa-v4?label=Repo%20size&style=plastic"></a>
+<a href="https://github.com/mrfzvx12/lexa-v4"><img src="https://img.shields.io/github/search/mrfzvx12/mrfzvx12/whatsapp?label=Search&style=plastic"></a>
 </p>
 
-# How to Install
+<h3 align="center">What New ?</h3>
 
-<details>
-<summary>How to install in Termux</summary>
+In this version I will recode the bot from [**WABOT-AQ**](https://github.com/Nurutomo/wabot-aq) and try to make it run without the **REST API** which uses **APIKEY**, so bots can run without fear **APIKEY** runs out"
 
-### Cloning
-Type command :
 
-```sh
-> apt-get update && apt-get install upgrade -y
-> apt-get install git
-> git clone https://github.com/moo-d/baileys-wabot
-```
+#### Simple WhatsApp Bot
+- [x] Original Script [**WABOT-AQ**](https://github.com/Nurutomo/wabot-aq)
 
-### Installing Package & Dependencies
-Type command :
+- [ ] Deploy On heroku
 
-```sh
-> cd baileys-wabot
-> bash install.sh
-```
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/mrfzvx12/lexa-v4)
 
-### Start
-Type command :
+***
+
+<h3 align="center">FOR TERMUX/UBUNTU/SSH USER</h3>
+<details close="close">
+  <summary>Click</summary>
+
+#### FOR TERMUX/UBUNTU/SSH USER
 
 ```sh
-> npm start
+apt update && apt upgrade
+apt install git -y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install imagemagick -y
+git clone https://github.com/Nurutomo/wabot-aq
+cd wabot-aq
+npm install
+npm update
 ```
 
+#### INSTALL ON TERMUX WITH UBUNTU
+
+* INSTALLING UBUNTU
+
+```sh
+apt update && apt full-upgrade
+apt install wget curl git proot-distro
+proot-distro install ubuntu
+echo "proot-distro login ubuntu" > $PREFIX/bin/ubuntu
+ubuntu
+```
+
+* INSTALLING REQUIRED PACKAGES
+
+```sh
+ubuntu
+apt update && apt full-upgrade
+apt install wget curl git ffmpeg imagemagick build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev dbus-x11 ffmpeg2theora ffmpegfs ffmpegthumbnailer ffmpegthumbnailer-dbg ffmpegthumbs libavcodec-dev libavcodec-extra libavcodec-extra58 libavdevice-dev libavdevice58 libavfilter-dev libavfilter-extra libavfilter-extra7 libavformat-dev libavformat58 libavifile-0.7-bin libavifile-0.7-common libavifile-0.7c2 libavresample-dev libavresample4 libavutil-dev libavutil56 libpostproc-dev libpostproc55 graphicsmagick graphicsmagick-dbg graphicsmagick-imagemagick-compat graphicsmagick-libmagick-dev-compat groff imagemagick-6.q16hdri imagemagick-common libchart-gnuplot-perl libgraphics-magick-perl libgraphicsmagick++-q16-12 libgraphicsmagick++1-dev
+```
+
+* INSTALLING NODEJS & WABOT-AQ
+
+```sh
+ubuntu
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+apt install -y nodejs gcc g++ make
+git clone https://github.com/Nurutomo/wabot-aq
+cd wabot-aq
+npm install
+npm update
+```
 </details>
 
-<details>
-<summary>How to install in Ubuntu</summary>
-Type command :
+***
 
-```sh
-> apt-get update
-> apt-get install sudo -y
-> sudo apt-get install git
-> sudo git clone https://github.com/moo-d/baileys-wabot
-> cd baileys-wabot
+<h3 align="center">FOR WINDOWS/VPS/RDP USER</h3>
+<details close="close">
+  <summary>Click</summary>
+
+#### FOR WINDOWS/VPS/RDP USER
+
+* Download And Install Git [`Click Here`](https://git-scm.com/downloads)
+* Download And Install NodeJS [`Click Here`](https://nodejs.org/en/download)
+* Download And Install FFmpeg [`Click Here`](https://ffmpeg.org/download.html) (**Don't Forget Add FFmpeg to PATH enviroment variables**)
+* Download And Install ImageMagick [`Click Here`](https://imagemagick.org/script/download.php)
+
+```bash
+git clone https://github.com/Nurutomo/wabot-aq
+cd wabot-aq
+npm install
+npm update
 ```
 
-### Installing Package & Dependencies
+#### Run
 
-```sh
-> sudo apt-get install nodejs -y
-> sudo apt-get install wget -y
-> sudo apt-get install libwebp-dev -y
-> sudo apt-get install tesseract-ocr -y
-> npm install && echo "[*] All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
+```bash
+node .
 ```
 
-#### Alternative
-This is an alternative command to install Package & Dependencies
+***
 
-```sh
-sudo apt-get install nodejs wget libwebp-dev tesseract-ocr -y && npm install && echo "[*] All dependencies have been installed, please run the command \"npm start\" to immediately start the script"
+#### Arguments `node . [--options] [<session name>]`
+
+#### `--self`
+
+> Activate self mode (Ignores other)
+
+#### `--pconly`
+
+> If that chat not from private bot, bot will ignore
+
+#### `--gconly`
+
+> If that chat not from group, bot will ignore
+
+#### `--swonly`
+
+> If that chat not from status, bot will ignore
+
+#### `--prefix <prefixes>`
+
+> * `prefixes` are seperated by each character
+Set prefix
+
+#### `--server`
+
+> Used for [heroku](https://heroku.com/) or scan through website
+
+#### `--db <json-server-url>`
+
+> Use external db instead of local db
+Example Server
+
+`https://json-server.nurutomo.repl.co/`
+Code: `https://repl.it/@Nurutomo/json-server`
+
+`node . --db 'https://json-server.nurutomo.repl.co/'`
+
+> The server should have like this specification
+
+#### GET
+
+```http
+GET /
+Accept: application/json
 ```
 
-### Start
-Type command :
+#### POST
 
-```sh
-> npm start
-```
+```http
+POST /
+Content-Type: application/json
 
-</details>
-
-<details>
-<summary>How to install in Windows</summary>
-
-#### Installing Git
-- Download the file [here](https://git-scm.com/download/win)
-- After that, run downloaded file as Administrator.
-- Complete the installation.
-- Check `git`
-- Now that you've Tesseract installed, verify that it's working by running this command to see version number:
-
-```cmd
-> git --version
-```
-
-#### Installing Libwebp
-- Download the file [here](https://storage.googleapis.com/downloads.webmproject.org/releases/webp/libwebp-1.2.1-windows-x64.zip).
-- Extract the file to `C:\` path.
-- Rename the extracted folder to `libwebp`.
-- Run Command Prompt as Administrator.
-- Run this command:
-
-```cmd
-> setx /m PATH "C:\libwebp\bin;%PATH%"
-```
-
-#### Installing Tesseract
-- Download the file x64 [here](https://s.id/vftesseract).
-- After that, run downloaded file as Administrator.
-- Complete the installation.
-- Run Command Prompt as Administrator.
-- Run this command:
-```cmd
-> setx /m PATH "C:\Program Files\Tesseract-OCR;%PATH%"
-```
-It will give us a callback like `SUCCESS: specified value was saved`.
-- Now that you've Tesseract installed, verify that it's working by running this command to see version number:
-```
-> tesseract -version
-```
-
-#### Installing FFmpeg
-- Download one of the available versions of FFmpeg by clicking [this link](https://www.gyan.dev/ffmpeg/builds/).
-- Extract the file to `C:\` path.
-- Rename the extracted folder to `ffmpeg`.
-- Run Command Prompt as Administrator.
-- Run this command:
-```cmd
-> setx /m PATH "C:\ffmpeg\bin;%PATH%"
-```
-It will give us a callback like `SUCCESS: specified value was saved`.
-
-</details>
-
-# Editing File 📝
-
-## Editing [setting.json](https://github.com/moo-d/baileys-wabot/blob/main/lib/setting.json)
-```json
 {
-  "prefix":".",
-  "ownernum": "62888xxx",
-  "removebgApiKey": "Your-ApiKey",
-  "botname": "BAILEYS-WABOT",
-  "ownername": "moo-d",
-  "pttmode": "false"
+ data: {}
 }
 ```
 
-- `prefix`: if you wan't to change prefix, you can change it as you want Example: `"prefix": "#"`.
-- `ownernum`: your WhatsApp number.
-- `removebgApiKey`: RemoveBg ApiKey. You have to login/signup first [here](https://www.remove.bg/upload). Then you can get it [here](https://www.remove.bg/api)
-- `botname`: your bot name
-- `ownername`: your name
-- `pttmode`: If you want use `pttmode`,change it to `true`
+#### `--big-qr`
 
-## Editing Language Bot
-If you want to change the language to English or Arabic, replace `const txtlang = ind` to `eng` or `arab`.
+> If small qr unicode doesn't support
 
-Example:
+#### `--restrict`
+
+> Enables restricted plugins (which can lead your number to be **banned** if used too often)
+
+> * Group Administration `add, kick`
+
+#### `--img`
+
+> Enable image inspector through terminal
+
+#### `--autoread`
+
+> If enabled, all incoming messages will be marked as read
+
+#### `--nyimak`
+
+> No bot, just print received messages and add users to database
+
+#### `--test`
+
+> **Development** Testing Mode
+
+#### `--trace`
 
 ```js
-const txtlang = ind
+conn.logger.level = 'trace'
 ```
 
-To:
+#### `--debug`
+
 ```js
-const txtlang = eng
+conn.logger.level = 'debug'
 ```
-
-<!--# How To Run Bot 24 Hours 🕓
-You can run bot 24 hours with website [Replit](replit.com)
-
-Read Replit [README.md](https://github.com/moo-d/baileys-wabot/blob/main/replit/README.md) for How to activating Replit Keep Alive & other.
--->
-# Features
-
-|      Sticker     | Yes |
-|:----------------:|:---:|
-| Sticker Maker    | ✔️  |
-| Sticker To Image | ✔️  |
-
-| News/Information | Yes |
-|:----------------:|:---:|
-| Covid-19 Help    | ✔️  |
-
-|   Fun       | Yes |
-|:-----------:|:---:|
-| Meme (Indo) | ✔️  |
-
-| Education | Yes |
-|:---------:|:---:|
-| Brainly   | ✔️  |
-
-|     Anime/Manga     | Yes |
-|:-------------------:|:---:|
-| Random Anime (NSFW) | ✔️  |
-
-|           Group           | Yes |
-|:-------------------------:|:---:|
-| See List Admin Group      | ✔️  |
-| Get Invitation Link Group | ✔️  |
-| Reply Fake Message        | ✔️  |
-| Check Level               | ✔️  |
-| TicTacToe                 | Testing |
-
-|         Admin Group              | Yes |
-|:--------------------------------:|:---:|
-| Promote Members                  | ✔️  |
-| Demote Members                   | ✔️  |
-| Add Members                      | ✔️  |
-| Kick Members                     | ✔️  |
-| Say Welcome to new members       | ✔️  |
-| Private Group Info               | ✔️  |
-| Ordering Bots to leave the group | ✔️  |
-| Close Group                      | ✔️  |
-| Open Group                       | ✔️  |
-| Delete Bot Message               | ✔️  |
-| Change Name Group                | ✔️  |
-| Change Description Group         | ✔️  |
-| Set Permission Nsfw on Group     | ✔️  |
-| Activating Leveling              | ✔️  |
-
-|             Owner           | Yes |
-|:---------------------------:|:---:|
-| Change Bot Prefix           | ✔️  |
-| Change Photo Profile Bot    | ✔️  |
-| Broadcast                   | ✔️  |
-| Group Broadcast             | ✔️  |
-| Change MSG Mode to Ptt Mode | ✔️  |
-
-|          No Category         | Yes |
-|:-----------------------------:|:---:|
-| WA-ME Link                    | ✔️  |
-| Check Block List              | ✔️  |
-| Video To MP 3                 | ✔️  |
-| Set Command to Private/Public | ✔️  |
 
 </details>
 
-# Social Media 📱
+***
 
-## Discord
-- Coming soon
+### Join WhatsApp Group
+If in doubt, before installing, try the bot here first
+<p>
+<a href="https://chat.whatsapp.com/LH3NMQUCwaVAumBt0WMyAg" target="blank"><img src="https://img.shields.io/badge/Im Lexa-30302f?style=flat&logo=whatsapp" /></a>
+</p>
 
-## Group
-* <a href="https://chat.whatsapp.com/Kr17kaCJQZQ0oiaU1q240y"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp%20Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+***
 
-# Thanks To:
-- [`@adiwajshing/Baileys`](https://github.com/adiwajshing/Baileys)
+### Let's connect with me
+For more detailed information, please contact me via social media below:
+
+<p>
+<a href="http://wa.me/6282223014661" target="blank"><img src="https://img.shields.io/badge/Whatsapp-30302f?style=flat&logo=whatsapp" /></a>
+<a href="http://www.instagram.com/mrf.zvx/" target="blank"><img src="https://img.shields.io/badge/Instagram-30302f?style=flat&logo=instagram" /></a>
+<a href="https://www.facebook.com/profile.php?id=100028409167054" target="blank"><img src="https://img.shields.io/badge/Facebook-30302f?style=flat&logo=facebook" /></a>
+</p>
+
+***
+
+### Thank To
+* <a href="https://github.com/adiwajshing/Baileys"><img src="https://img.shields.io/github/followers/adiwajshing?color=orange&label=Adiwajshing&logo=github&logoColor=orange&style=plastic"></a>
+* <a href="https://github.com/Nurutomo/wabot-aq"><img src="https://img.shields.io/github/followers/nurutomo?color=orange&label=Nurutomo&logo=github&logoColor=orange&style=plastic"></a>
+
+***
+
+### Tamplate Readme
+Thank to
+https://img.shields.io
+
+***
