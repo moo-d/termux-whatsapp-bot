@@ -80,7 +80,7 @@ Type command :
 - After that, run downloaded file as Administrator.
 - Complete the installation.
 - Check `git`
-- Now that you've Tesseract installed, verify that it's working by running this command to see version number:
+- Now that you've Git installed, verify that it's working by running this command to see version number:
 
 ```cmd
 > git --version
