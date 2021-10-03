@@ -135,7 +135,9 @@ It will give us a callback like `SUCCESS: specified value was saved`.
   "removebgApiKey": "Your-ApiKey",
   "botname": "BAILEYS-WABOT",
   "ownername": "moo-d",
-  "pttmode": "false"
+  "pttmode": "false",
+  "groupminact": "false",
+  "grouplimit": 5
 }
 ```
 
@@ -145,6 +147,8 @@ It will give us a callback like `SUCCESS: specified value was saved`.
 - `botname`: your bot name
 - `ownername`: your name
 - `pttmode`: If you want use `pttmode`,change it to `true`
+- `groupminact`: `true`(enable)/`false`(disable) Leave group if number of group members is 
+- `grouplimit`: minimal group members (this will active if groupminact is `true`.)
 
 ## Editing Language Bot
 If you want to change the language to English or Arabic, replace `const txtlang = ind` to `eng` or `arab`.
