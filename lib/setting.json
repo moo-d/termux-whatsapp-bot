@@ -1,10 +1,10 @@
 {
-  "prefix": ".",
-  "ownernum": "62888xxx",
-  "removebgApiKey": "Your-ApiKey",
-  "botname": "BAILEYS-WABOT",
-  "ownername": "moo-d",
+  "prefix": "/",
+  "ownernum": "8928095793",
+  "removebgApiKey": "kp7wQyuF8iTieARrZ5WUTnJ9",
+  "botname": "Sakura",
+  "ownername": "Gaurav",
   "pttmode": "false",
-  "groupminact": "false",
-  "grouplimit": 5
+  "groupminact": "true",
+  "grouplimit": 50
 }
